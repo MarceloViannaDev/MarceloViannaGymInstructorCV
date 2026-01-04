@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -31,14 +31,12 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
-      transition: 0.3s;
     }
 
     .container {
       max-width: 960px;
       margin: 60px auto;
       padding: 0 20px;
-      animation: fadeIn .8s ease;
     }
 
     .card {
@@ -69,10 +67,7 @@
       border-radius:20px;
       font-size:.8rem;
       cursor:pointer;
-      transition:.2s;
     }
-
-    .btn:hover { color:var(--accent); border-color:var(--accent); }
 
     h1 { font-size:2.6rem; font-weight:700; }
 
@@ -85,8 +80,8 @@
     }
 
     .avatar {
-      width:240px;
-      height:240px;
+      width:220px;
+      height:220px;
       border-radius:50%;
       overflow:hidden;
       border:3px solid var(--border);
@@ -94,7 +89,7 @@
 
     .avatar img { width:100%; height:100%; object-fit:cover; }
 
-    section { margin-bottom:38px; animation: slideUp .6s ease; }
+    section { margin-bottom:38px; }
 
     h2 {
       font-size:1.25rem;
@@ -119,117 +114,10 @@
       margin-top:40px;
     }
 
-    @keyframes fadeIn { from{opacity:0} to{opacity:1} }
-    @keyframes slideUp { from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:none} }
-
-/* =========================
-   RESPONSIVE – MOBILE
-   ========================= */
-
-@media (max-width: 768px) {
-
-  .container {
-    margin: 30px auto;
-    padding: 0 14px;
-  }
-
-  .card {
-    padding: 26px 22px;
-    border-radius: 14px;
-  }
-
-  header {
-    grid-template-columns: 1fr;
-    gap: 22px;
-    text-align: center;
-  }
-
-  .controls {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-  }
-
-  h1 {
-    font-size: 2rem;
-    line-height: 1.2;
-  }
-
-  .subtitle {
-    font-size: 0.95rem;
-  }
-
-  .contact {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-
-  .avatar {
-    width: 160px;
-    height: 160px;
-    margin: 0 auto;
-  }
-
-  section {
-    margin-bottom: 30px;
-  }
-
-  h2 {
-    font-size: 1.15rem;
-    text-align: left;
-  }
-
-  .item h3 {
-    font-size: 1rem;
-  }
-
-  .item span {
-    font-size: 0.8rem;
-  }
-
-  footer {
-    font-size: 0.75rem;
-    margin-top: 30px;
-  }
-}
-
-/* =========================
-   EXTRA SMALL DEVICES
-   ========================= */
-
-@media (max-width: 420px) {
-
-  h1 {
-    font-size: 1.75rem;
-  }
-
-  .btn {
-    font-size: 0.75rem;
-    padding: 6px 12px;
-  }
-
-  .avatar {
-    width: 140px;
-    height: 140px;
-  }
-}
-
-@media (max-width: 768px) {
-
-  header {
-    grid-template-columns: 1fr;
-  }
-
-  header > div:first-child {
-    order: 2; /* texto */
-  }
-
-  header > .avatar {
-    order: 1; /* foto */
-  }
-}
-
-
+    @media (max-width: 768px) {
+      header { grid-template-columns: 1fr; text-align:center; }
+      .avatar { margin:0 auto; }
+    }
   </style>
 </head>
 
@@ -242,25 +130,15 @@
     <div class="controls">
       <button class="btn" onclick="setLang('en')">EN</button>
       <button class="btn" onclick="setLang('pt')">PT</button>
-      <button class="btn" onclick="downloadCV()">Download CV</button>
       <button class="btn" onclick="toggleTheme()">Light / Dark</button>
     </div>
 
-    <h1 id="name">Marcelo Vianna Pacheco</h1>
+    <h1>Marcelo Vianna Pacheco</h1>
 
-    <p class="subtitle" id="role">
-      Gym Instructor Offshore | Physical Education Professional
-    </p>
+    <p class="subtitle" id="role"></p>
+    <p class="subtitle" id="headline"></p>
 
-    <p class="subtitle">
-      <strong>English Fluent</strong> • Offshore Experience • Health & Well-being
-    </p>
-
-    <div class="contact" id="contact">
-      Iguaba Grande - RJ, Brazil • 41 years old<br/>
-      marcelovianna2010@gmail.com • +55 22 99877-5857<br/>
-      Education: Bachelor in Physical Education • Industrial Mechanics Technician • React Frontend Specialist
-    </div>
+    <div class="contact" id="contact"></div>
   </div>
 
   <div class="avatar">
@@ -269,155 +147,138 @@
 </header>
 
 <section>
-  <h2>Professional Profile</h2>
-  <p>
-    Physical Education professional with extensive offshore experience as a
-    <strong>Gym Instructor Offshore</strong>. Strong focus on physical conditioning,
-    injury prevention, training planning and promotion of health and well-being
-    in offshore environments. Fluent in English and experienced in multinational crews.
-  </p>
+  <h2 id="profileTitle"></h2>
+  <p id="profileText"></p>
 </section>
 
 <section>
-  <h2>Professional Experience</h2>
+  <h2 id="experienceTitle"></h2>
 
   <div class="item highlight">
     <h3>Gym Instructor Offshore</h3>
-    <span>Prosafe – Flotel Safe Eurus • 2019 – 2021</span>
-    <p>
-      Full responsibility for onboard gym management, training programs,
-      injury prevention, motivation and physical well-being of offshore crews.
-    </p>
+    <span id="gymPeriod"></span>
+    <p id="gymText"></p>
+  </div>
+
+  <div class="item">
+    <h3>Offshore Storekeeper / Materials Coordinator</h3>
+    <span>Subsea7 • OOS International • MODEC • BassDrill (Atlantica) • 2011 – 2017</span>
+    <p id="storekeeperText"></p>
+  </div>
+
+  <div class="item">
+    <h3>Radio Operator Offshore</h3>
+    <span id="radioPeriod"></span>
+    <p id="radioText"></p>
+  </div>
+
+  <div class="item">
+    <h3>Web Designer / IT Technician</h3>
+    <span>2008 – 2009</span>
+    <p id="webText"></p>
+  </div>
+
+  <div class="item">
+    <h3>IT Technician / Brazilian Air Force Soldier</h3>
+    <span>2003 – 2008</span>
+    <p id="itText"></p>
   </div>
 
   <div class="item">
     <h3>Frontend Developer</h3>
     <span>2022 – 2024</span>
-    <p>Development of modern and responsive user interfaces.</p>
+    <p id="frontendText"></p>
   </div>
 
-  <div class="item">
-    <h3>Offshore Storekeeper / Materials Coordinator</h3>
-    <span>Subsea7 • OOS International • MODEC • 2013 – 2017</span>
-    <p>
-      Warehouse coordination, logistics, requisitions and inventory management
-      using AMOS Business Suite and Teromarine systems.
-    </p>
-  </div>
-
-  <div class="item">
-    <h3>Radio Operator Offshore</h3>
-    <span>Queiroz Galvão • McDermott • 2012 – 2013</span>
-    <p>
-      POB control, aviation support, offshore communication and documentation.
-    </p>
-  </div>
-
-  <div class="item">
-    <h3>Web Designer / IT Technician</h3>
-    <span>Web Sigma • Faculdade União Araruama • 2008 – 2011</span>
-    <p>Website development, visual design, IT support and systems maintenance.</p>
-  </div>
-
-  <div class="item">
-    <h3>IT Technician</h3>
-    <span>AR Computadores • Brazilian Air Force • 2003 – 2008</span>
-    <p>Computer maintenance, stock control and technical support.</p>
-  </div>
 </section>
 
 <section>
-  <h2>Languages</h2>
-  <p>Portuguese (Native) • English (Fluent) • Spanish (Basic)</p>
+  <h2 id="langTitle"></h2>
+  <p id="langText"></p>
 </section>
 
-<footer>
-  © Marcelo Vianna Pacheco • Online Curriculum Vitae
-</footer>
+<footer id="footerText"></footer>
 
 </article>
 </main>
 
 <script>
-  const translations = {
-    en: {
-      role: "Gym Instructor Offshore | Physical Education Professional",
-      headline: "English Fluent • Offshore Experience • Health & Well-being",
-      contact: `
-        Iguaba Grande - RJ, Brazil • 41 years old<br/>
-        marcelovianna2010@gmail.com • +55 22 99877-5857<br/>
-        Education: Bachelor in Physical Education • Industrial Mechanics Technician • React Frontend Specialist
-      `,
-      profile: `
-        Physical Education professional with extensive offshore experience as a
-        <strong>Gym Instructor Offshore</strong>. Strong focus on physical conditioning,
-        injury prevention, training planning and promotion of health and well-being
-        in offshore environments. Fluent in English and experienced in multinational crews.
-      `,
-      experienceTitle: "Professional Experience",
-      languages: "Portuguese (Native) • English (Fluent) • Spanish (Basic)",
-      footer: "© Marcelo Vianna Pacheco • Online Curriculum Vitae"
-    },
+const translations = {
+  en: {
+    role: "Gym Instructor Offshore | Physical Education Professional",
+    headline: "English Fluent • Offshore Experience • Health & Well-being",
+    contact: `Iguaba Grande - RJ, Brazil • 41 years old<br/>
+              marcelovianna2010@gmail.com • +55 22 9 9877-5857<br/>
+              Education: Bachelor in Physical Education • Industrial Mechanics Technician`,
+    profileTitle: "Professional Profile",
+    profileText: "Physical Education professional with extensive offshore experience as a Gym Instructor Offshore. Strong focus on physical conditioning, injury prevention, training planning and promotion of health and well-being in offshore environments. Fluent in English and experienced in multinational crews.",
+    experienceTitle: "Professional Experience",
+    gymPeriod: "Prosafe – Flotel Safe Eurus • August 2019 – December 2021",
+    gymText: "Responsible for onboard gym management, physical training programs, injury prevention and promotion of health and well-being for offshore crews.",
+    storekeeperText: "Extensive international experience in warehouse coordination, logistics, material control and inventory management. Worked in Dalian, China, supporting platform adaptation and regulatory compliance for operations in Brazil. Sailed aboard the Laguna Star drilling platform from Singapore to Brazil, acting as Warehouse Clerk during the 75-day voyage.",
+    radioPeriod: "McDermott • 2010 – 2011 (6-month contract)",
+    radioText: "POB control, aviation support, offshore communication and operational documentation.",
+    webText: "Website development, visual design, IT support and systems maintenance.",
+    itText: "Computer maintenance, stock control and technical support.",
+    frontendText: "Development of modern and responsive user interfaces.",
+    langTitle: "Languages",
+    langText: "Portuguese (Native) • English (Fluent) • Spanish (Basic)",
+    footer: "© Marcelo Vianna Pacheco • Online Curriculum Vitae"
+  },
 
-    pt: {
-      role: "Gym Instructor Offshore | Profissional de Educação Física",
-      headline: "Inglês Fluente • Experiência Offshore • Saúde e Bem-Estar",
-      contact: `
-        Iguaba Grande - RJ, Brasil • 41 anos<br/>
-        marcelovianna2010@gmail.com • +55 22 99877-5857<br/>
-        Formação: Bacharel em Educação Física • Técnico em Mecânica Industrial • Especialista em Frontend React
-      `,
-      profile: `
-        Profissional de Educação Física com ampla experiência offshore como
-        <strong>Gym Instructor Offshore</strong>. Forte atuação em condicionamento físico,
-        prevenção de lesões, planejamento de treinos e promoção da saúde e bem-estar
-        em ambientes offshore. Inglês fluente e experiência com tripulações multinacionais.
-      `,
-      experienceTitle: "Experiência Profissional",
-      languages: "Português (Nativo) • Inglês (Fluente) • Espanhol (Básico)",
-      footer: "© Marcelo Vianna Pacheco • Currículo Online"
-    }
-  };
-
-  let currentLang = localStorage.getItem("lang") || "en";
-
-  function setLang(lang) {
-    currentLang = lang;
-    localStorage.setItem("lang", lang);
-    applyTranslations();
+  pt: {
+    role: "Gym Instructor Offshore | Profissional de Educação Física",
+    headline: "Inglês Fluente • Experiência Offshore • Saúde e Bem-Estar",
+    contact: `Iguaba Grande - RJ, Brasil • 41 anos<br/>
+              marcelovianna2010@gmail.com • +55 22 9 9877-5857 (Telefone e WhatsApp)<br/>
+              Formação: Bacharel em Educação Física • Técnico em Mecânica Industrial`,
+    profileTitle: "Perfil Profissional",
+    profileText: "Profissional de Educação Física com ampla experiência offshore como Gym Instructor Offshore. Forte atuação em condicionamento físico, prevenção de lesões, planejamento de treinos e promoção da saúde e do bem-estar em ambientes offshore. Inglês fluente e experiência com tripulações multinacionais.",
+    experienceTitle: "Experiência Profissional",
+    gymPeriod: "Prosafe – Flotel Safe Eurus • Agosto 2019 – Dezembro 2021",
+    gymText: "Responsável pela gestão da academia a bordo, desenvolvimento de programas de treinamento físico, prevenção de lesões e promoção da saúde e bem-estar da tripulação.",
+    storekeeperText: "Ampla experiência internacional em coordenação de almoxarifado, logística, controle de materiais e inventário. Atuação em Dalian, China, no suporte à adaptação de plataformas para operação no Brasil. Embarque na plataforma Laguna Star, realizando a travessia de Singapura ao Brasil, atuando como Almoxarife durante os 75 dias de navegação.",
+    radioPeriod: "McDermott • 2010 – 2011 (Contrato temporário – 6 meses)",
+    radioText: "Controle de POB, suporte às operações de aviação, comunicação offshore e organização da documentação operacional.",
+    webText: "Desenvolvimento de websites, design visual, suporte em TI e manutenção de sistemas.",
+    itText: "Manutenção de computadores, controle de estoque e suporte técnico.",
+    frontendText: "Desenvolvimento de interfaces de usuário modernas e responsivas.",
+    langTitle: "Idiomas",
+    langText: "Português (Nativo) • Inglês (Fluente) • Espanhol (Básico)",
+    footer: "© Marcelo Vianna Pacheco • Currículo Online"
   }
+};
 
-  function applyTranslations() {
-    const t = translations[currentLang];
+let currentLang = "en";
 
-    document.getElementById("role").innerHTML = t.role;
-    document.querySelector(".subtitle strong").parentElement.innerHTML = `<strong>${t.headline.split(" • ")[0]}</strong> • ${t.headline.split(" • ").slice(1).join(" • ")}`;
-    document.getElementById("contact").innerHTML = t.contact;
-    document.querySelector("section p").innerHTML = t.profile;
-    document.querySelector("section h2").innerText = currentLang === "en" ? "Professional Profile" : "Perfil Profissional";
-    document.querySelectorAll("section h2")[1].innerText = t.experienceTitle;
-    document.querySelectorAll("section h2")[2].innerText = currentLang === "en" ? "Languages" : "Idiomas";
-    document.querySelectorAll("section p")[1].innerText = t.languages;
-    document.querySelector("footer").innerText = t.footer;
-  }
+function setLang(lang) {
+  currentLang = lang;
+  const t = translations[lang];
+  role.innerHTML = t.role;
+  headline.innerHTML = t.headline;
+  contact.innerHTML = t.contact;
+  profileTitle.innerHTML = t.profileTitle;
+  profileText.innerHTML = t.profileText;
+  experienceTitle.innerHTML = t.experienceTitle;
+  gymPeriod.innerHTML = t.gymPeriod;
+  gymText.innerHTML = t.gymText;
+  storekeeperText.innerHTML = t.storekeeperText;
+  radioPeriod.innerHTML = t.radioPeriod;
+  radioText.innerHTML = t.radioText;
+  webText.innerHTML = t.webText;
+  itText.innerHTML = t.itText;
+  frontendText.innerHTML = t.frontendText;
+  langTitle.innerHTML = t.langTitle;
+  langText.innerHTML = t.langText;
+  footerText.innerHTML = t.footer;
+}
 
-  function toggleTheme() {
-    const html = document.documentElement;
-    html.setAttribute(
-      "data-theme",
-      html.getAttribute("data-theme") === "dark" ? "light" : "dark"
-    );
-  }
+function toggleTheme() {
+  const html = document.documentElement;
+  html.dataset.theme = html.dataset.theme === "dark" ? "light" : "dark";
+}
 
-  function downloadCV() {
-    const file =
-      currentLang === "pt"
-        ? "CV_Marcelo_Vianna_Pacheco_PT.pdf"
-        : "CV_Marcelo_Vianna_Pacheco_EN.pdf";
-    window.location.href = file;
-  }
-
-  applyTranslations();
+setLang("en");
 </script>
 
 </body>
