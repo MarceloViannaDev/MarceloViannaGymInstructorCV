@@ -118,7 +118,7 @@ li { margin-bottom: 0.3rem; }
   <h2 id="eduTitle"></h2>
   <p id="education"></p>
 
-  <h2 id="langTitle"></h2>
+  <h2 id="projectTitle"></h2><p id="projects"></p><h2 id="langTitle"></h2>
   <p id="languages"></p>
 
 </div>
@@ -127,10 +127,10 @@ li { margin-bottom: 0.3rem; }
 <script>
 const t = {
 en: {
-  role: "Gym Instructor Offshore | Storekeeper Offshore | Health and Wellness",
-  contact: "marcelovianna2010@gmail.com | +55 22 9 9877-5857 | Iguaba Grande - RJ, Brazil",
+  role: "Physical Education Instructor | Offshore Storekeeper | Materials Coordinator | Logistics Support",
+  contact: "marcelovianna2010@gmail.com | +55 22 9 9877-5857 | Saquarema - RJ, Brazil",
   summaryTitle: "SUMMARY",
-  summary: "Professional in Physical Education with extensive offshore experience as both an Offshore Gym Instructor and Offshore Storekeeper. Demonstrates strong skills in physical conditioning, injury prevention, training planning, and promoting health and well-being in offshore environments. Fluent in English and experienced in working with multinational crews.",
+  summary: "Experienced offshore professional with a strong background in warehouse operations, materials coordination, logistics support, inventory control and crew well-being in high-demand offshore environments. Combines operational discipline, safety awareness, inventory management expertise and adaptability with a solid foundation in physical education, health and fitness training. Fluent in English and experienced working with multinational crews.",
   expTitle: "EXPERIENCE",
   experience: `
     <div class="item">
@@ -234,14 +234,14 @@ en: {
   eduTitle: "EDUCATION",
   education: "<strong>Bachelor’s degree in Physical Education</strong><br><strong>Technician in Industrial Mechanics</strong>",
   langTitle: "LANGUAGES",
-  languages: "Portuguese (Native) • English (Fluent) • Spanish (Basic)"
+  projectTitle: "PROJECTS", projects: "Online CV: https://marcelo-vianna-gym-instructor-cv.vercel.app", languages: "Portuguese (Native) • English (Fluent) • Spanish (Basic)"
 },
 
 pt: {
-  role: "Instrutor de Ginástica Offshore | Estoquista Offshore | Saúde e Bem-Estar",
-  contact: "marcelovianna2010@gmail.com | +55 22 9 9877-5857 | Iguaba Grande - RJ, Brasil",
+  role: "Instrutor de Educação Física | Almoxarife Offshore | Coordenador de Materiais | Suporte Logístico",
+  contact: "marcelovianna2010@gmail.com | +55 22 9 9877-5857 | Saquarema - RJ, Brasil",
   summaryTitle: "RESUMO",
-  summary: "Profissional de Educação Física com vasta experiência em plataformas offshore, atuando como instrutor de ginástica e responsável pelo almoxarifado. Possui sólidas habilidades em condicionamento físico, prevenção de lesões, planejamento de treinamento e promoção da saúde e bem-estar em ambientes offshore. Fluente em inglês e com experiência em trabalho com tripulações multinacionais.",
+  summary: "Profissional experiente em operações offshore, com foco em almoxarifado, coordenação de materiais, suporte logístico, controle de estoque e bem-estar da tripulação em ambientes de alta demanda. Combina disciplina operacional, consciência de segurança, gestão de materiais e adaptabilidade com sólida formação em educação física, saúde e condicionamento físico. Fluente em inglês e com experiência em equipes multinacionais.",
   expTitle: "EXPERIÊNCIA",
   experience: `
     <div class="item">
@@ -345,7 +345,7 @@ pt: {
   eduTitle: "EDUCAÇÃO",
   education: "<strong>Licenciatura em Educação Física</strong><br><strong>Técnico em Mecânica Industrial</strong>",
   langTitle: "IDIOMAS",
-  languages: "Português (Nativo) • Inglês (Fluente) • Espanhol (Básico)"
+  projectTitle: "PROJETOS", projects: "Currículo online: https://marcelo-vianna-gym-instructor-cv.vercel.app", languages: "Português (Nativo) • Inglês (Fluente) • Espanhol (Básico)"
 }
 };
 
@@ -361,6 +361,8 @@ function setLang(l) {
   document.getElementById('skills').innerHTML = t[l].skills;
   document.getElementById('eduTitle').innerHTML = t[l].eduTitle;
   document.getElementById('education').innerHTML = t[l].education;
+  document.getElementById('projectTitle').innerHTML = t[l].projectTitle;
+  document.getElementById('projects').innerHTML = t[l].projects;
   document.getElementById('langTitle').innerHTML = t[l].langTitle;
   document.getElementById('languages').innerHTML = t[l].languages;
 }
