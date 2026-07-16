@@ -1,378 +1,293 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="light">
+<html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marcelo Vianna Pacheco | CV</title>
-<style>
-:root {
-  --bg: #f8fafc;
-  --card: #ffffff;
-  --heading: #0f172a;
-  --text: #334155;
-  --muted: #64748b;
-  --accent: #0284c7;
-  --border: #e2e8f0;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcelo Vianna Pacheco | Professional CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-[data-theme="dark"] {
-  --bg: #0f172a;
-  --card: #1e293b;
-  --heading: #f8fafc;
-  --text: #cbd5e1;
-  --muted: #94a3b8;
-  --accent: #38bdf8;
-  --border: #334155;
-}
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap');
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+        .hero-bg {
+            background: linear-gradient(135deg, #0a66c2 0%, #1e88e5 100%);
+        }
 
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-  transition: background-color 0.3s, color 0.3s;
-}
+        html {
+            transition: background-color .3s, color .3s;
+        }
 
-.container {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
-}
+        .active-lang {
+            background: #0a66c2;
+            color: white;
+        }
 
-.card {
-  background: var(--card);
-  padding: 50px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-  transition: background-color 0.3s;
-}
+        .dark .active-lang {
+            background: #1e88e5;
+        }
 
-/* Header & Typography */
-h1 { font-size: 2.2rem; color: var(--heading); text-align: center; margin-bottom: 0.2rem; }
-h2 { font-size: 1.25rem; color: var(--heading); border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; margin: 2.5rem 0 1.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
-h3 { font-size: 1.1rem; color: var(--heading); font-weight: 600; }
+        #theme-icon {
+            transition: transform .3s;
+        }
 
-.subtitle { text-align: center; font-size: 1.1rem; color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; }
-.contact { text-align: center; font-size: 0.95rem; color: var(--muted); margin-bottom: 2rem; }
-
-/* Experience Section */
-.item { margin-bottom: 1.8rem; }
-.job-header { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 0.4rem; }
-.period { font-size: 0.9rem; color: var(--muted); font-weight: 500; white-space: nowrap; }
-
-p { margin-bottom: 0.8rem; }
-ul { margin-top: 0.5rem; padding-left: 1.5rem; color: var(--text); }
-li { margin-bottom: 0.3rem; }
-
-/* Utilities */
-.btn-group { display: flex; gap: 10px; justify-content: center; margin-bottom: 2rem; }
-.btn { 
-  background: transparent; 
-  color: var(--text); 
-  border: 1px solid var(--border); 
-  padding: 6px 16px; 
-  border-radius: 20px; 
-  cursor: pointer; 
-  font-size: 0.85rem; 
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-.btn:hover { background: var(--border); color: var(--heading); }
-
-.avatar { width: 130px; height: 130px; border-radius: 50%; overflow: hidden; margin: 0 auto 1.5rem; border: 3px solid var(--border); }
-.avatar img { width: 100%; height: 100%; object-fit: cover; }
-
-/* Responsive */
-@media (max-width: 640px) {
-  .job-header { flex-direction: column; gap: 0.2rem; }
-  .card { padding: 30px 20px; }
-}
-</style>
+        .dark #theme-icon {
+            transform: rotate(180deg);
+        }
+    </style>
 </head>
-<body>
-<div class="container">
-<div class="card">
-  
-  <div class="btn-group">
-    <button class="btn" onclick="setLang('en')">EN</button>
-    <button class="btn" onclick="setLang('pt')">PT-BR</button>
-    <button class="btn" onclick="toggleTheme()">Light / Dark</button>
-  </div>
 
-  <div class="avatar"><img src="Avatar_Circle.png" alt="Marcelo Vianna Pacheco"></div>
-  <h1>MARCELO VIANNA PACHECO</h1>
-  <p class="subtitle" id="role"></p>
-  <p class="contact" id="contact"></p>
+<body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 min-h-screen transition-colors duration-300">
+    <!-- Navbar -->
+    <nav class="bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <!-- <div
+                    class="w-10 h-10 bg-[#0a66c2] rounded-full flex items-center justify-center text-white font-bold text-2xl">
+                    MV</div> -->
+                <h1 class="text-2xl font-semibold">Marcelo Vianna Pacheco - CV Online</h1>
+            </div>
 
-  <h2 id="summaryTitle"></h2>
-  <p id="summary"></p>
+            <div class="flex items-center gap-4">
+                <div class="flex border border-zinc-300 dark:border-zinc-700 rounded-full p-1">
+                    <button onclick="switchLanguage('pt')" id="btn-pt"
+                        class="px-5 py-2 text-sm font-medium rounded-full transition-all active-lang">🇧🇷 PT</button>
+                    <button onclick="switchLanguage('en')" id="btn-en"
+                        class="px-5 py-2 text-sm font-medium rounded-full transition-all">🇬🇧 EN</button>
+                </div>
 
-  <h2 id="expTitle"></h2>
-  <div id="experience"></div>
+                <a href="https://www.linkedin.com/in/marceloviannaoffshorestorekeeper/" target="_blank"
+                    class="p-3 text-[#0a66c2] hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-2xl">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a href="https://whatsform.com/OzMUJ5" target="_blank"
+                    class="p-3 text-green-600 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-2xl">
+                    <i class="fab fa-whatsapp text-2xl"></i>
+                </a>
 
-  <h2 id="skillsTitle"></h2>
-  <p id="skills"></p>
+                <button onclick="toggleDarkMode()" class="p-3 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-2xl">
+                    <i id="theme-icon" class="fas fa-moon text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
 
-  <h2 id="eduTitle"></h2>
-  <p id="education"></p>
+    <div class="max-w-6xl mx-auto px-6 py-12">
+        <!-- Hero -->
+        <div class="hero-bg text-white rounded-3xl p-12 mb-16 flex flex-col lg:flex-row gap-12 items-center">
+            <img src="Avatar_Circle.jpg" alt="Marcelo Vianna Pacheco"
+                class="w-52 h-52 rounded-full object-cover border-8 border-white shadow-2xl">
+            <div class="flex-1 text-center lg:text-left">
+                <h1 id="name" class="text-5xl font-semibold mb-3">Marcelo Vianna Pacheco</h1>
+                <p id="title" class="text-2xl opacity-90 mb-8"></p>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-x-10 gap-y-4 text-lg">
+                    <div><i class="fas fa-map-marker-alt"></i> Rio de Janeiro, Brasil</div>
+                    <div><i class="fas fa-envelope"></i> marcelovianna2010@gmail.com</div>
+                    <div><i class="fas fa-phone"></i> +55 (22) 99877-5857</div>
+                </div>
+            </div>
+        </div>
 
-  <h2 id="projectTitle"></h2><p id="projects"></p><h2 id="langTitle"></h2>
-  <p id="languages"></p>
+        <div class="grid lg:grid-cols-12 gap-12">
+            <!-- Left -->
+            <div class="lg:col-span-5 space-y-10">
+                <div class="bg-white dark:bg-zinc-900 rounded-3xl p-9 shadow">
+                    <h2 id="summary-title" class="text-3xl font-semibold mb-6">Resumo Profissional</h2>
+                    <p id="summary-text" class="text-zinc-600 dark:text-zinc-400 leading-relaxed text-[17px]"></p>
+                </div>
 
-</div>
-</div>
+                <div class="bg-white dark:bg-zinc-900 rounded-3xl p-9 shadow">
+                    <h2 id="education-title" class="text-3xl font-semibold mb-6">Formação Acadêmica</h2>
+                    <div class="space-y-8">
+                        <div>
+                            <p id="edu1" class="font-semibold text-xl"></p>
+                            <p class="text-zinc-500 dark:text-zinc-400">Graduação Completa</p>
+                        </div>
+                        <div>
+                            <p id="edu2" class="font-semibold text-xl"></p>
+                            <p class="text-zinc-500 dark:text-zinc-400">Formação Técnica</p>
+                        </div>
+                    </div>
+                </div>
 
-<script>
-const t = {
-en: {
-  role: "Physical Education Instructor | Offshore Storekeeper | Materials Coordinator | Logistics Support",
-  contact: "marcelovianna2010@gmail.com | +55 22 9 9877-5857 | Saquarema - RJ, Brazil",
-  summaryTitle: "SUMMARY",
-  summary: "Experienced offshore professional with a strong background in warehouse operations, materials coordination, logistics support, inventory control and crew well-being in high-demand offshore environments. Combines operational discipline, safety awareness, inventory management expertise and adaptability with a solid foundation in physical education, health and fitness training. Fluent in English and experienced working with multinational crews.",
-  expTitle: "EXPERIENCE",
-  experience: `
-    <div class="item">
-      <div class="job-header">
-        <h3>Self-Employed – UX/UI | Web Developer</h3>
-        <span class="period">Jan 2023 – March 2026 | Cabo Frio - RJ, Brazil</span>
-      </div>
-      <p>Businessperson - Website and software development (non-offshore work).</p>
-    </div>
-    
-    <div class="item">
-      <div class="job-header">
-        <h3>Prosafe – Gym Instructor Offshore</h3>
-        <span class="period">Aug 2019 – Dec 2021 | Flotel Safe Eurus</span>
-      </div>
-      <p>Flotel Safe Eurus - Managed onboard gym operations and developed physical training programs for multinational crews, focusing on injury prevention and health maintenance in offshore environments.</p>
-    </div>
+                <div class="bg-white dark:bg-zinc-900 rounded-3xl p-9 shadow">
+                    <h2 id="skills-title" class="text-3xl font-semibold mb-6">Competências</h2>
+                    <div id="skills-container" class="flex flex-wrap gap-3"></div>
+                </div>
 
-    <div class="item">
-      <div class="job-header">
-        <h3>Subsea7 – Offshore Storekeeper / Materials Coordinator</h3>
-        <span class="period">July 2015 – Oct 2017 | PLSV Vessels</span>
-      </div>
-      <p>PLSV Vessels - Coordinated inventory operations and warehouse structure planning using TEROMARINE – TM v2 system. Created and managed logistics manifests for offshore material loading/unloading, maintaining operational organization and supply chain traceability.</p>
-    </div>
+                <div class="bg-white dark:bg-zinc-900 rounded-3xl p-9 shadow">
+                    <h2 id="languages-title" class="text-3xl font-semibold mb-6">Idiomas</h2>
+                    <div id="languages-container" class="space-y-5"></div>
+                </div>
+            </div>
 
-    <div class="item">
-      <div class="job-header">
-        <h3>BlueOOS / OOS Internacional – Offshore Storekeeper / Materials Coordinator</h3>
-        <span class="period">April 2014 – Nov 2014 | Flotel Prometheus</span>
-      </div>
-      <p>Flotel Prometheus (6-month contract) - As a Warehouse Coordinator and Manager, I am responsible for overseeing operations, structural planning, and managing material requests on board.</p>
-    </div>
-
-    <div class="item">
-      <div class="job-header">
-        <h3>Atlantica Management (USA) Inc. – Materials Coordinator</h3>
-        <span class="period">June 2012 – April 2014 | China / Brasil</span>
-      </div>
-      <p>Tender Drilling Platform (China / Brazil) - I worked on the project from its initial development phase in China, overseeing all materials and warehouse operations during platform preparation. I managed warehouse layout planning, inventory organization, and operational structuring to ensure the platform’s readiness for deployment in Brazil.</p>
-      <p>I also gained practical experience in port logistics and materials coordination during the platform’s 3-month stay at Warehouse 7 at the Triunfo Logística Offshore Port in Rio de Janeiro, Brazil, for final preparations for the start of offshore operations.</p>
-      <p>I served as Materials Coordinator, supervising material requests, inventory processes, and onboard logistics operations, using the AMOS Business Suite 2 and SAP systems. I planned the warehouse structure and materials control workflows, ensuring efficient operational support, traceability, and organization in offshore environments.</p>
-    </div>
-
-    <div class="item">
-      <div class="job-header">
-        <h3>MODEC – Offshore Storekeeper</h3>
-        <span class="period">Feb 2012 – May 2012 | FPSO Cidade de Santos</span>
-      </div>
-      <p>FPSO Cidade de Santos (temporary contract) - Responsible for inventory control, creating and managing material requests on board, and organizing the warehouse in offshore operational environments. I have experience in material storage processes, shelf identification, inventory tracking, and optimizing warehouse inventory to ensure operational efficiency and the availability of materials on board.</p>
-      <p>I utilize AMOS Business Suite 9 for inventory control, managing material requests, and administration, which ensures accurate inventory management, traceability, and organized logistical support for offshore operations.</p>
-    </div>
-
-    <div class="item">
-      <div class="job-header">
-        <h3>McDermott International, Ltd – Offshore Radio Operator</h3>
-        <span class="period">Aug 2011 – Oct 2012 | Agile PLSV</span>
-      </div>
-      <p>AGILE PLSV Vessel (3-month contract) - Provided aircraft support operations and offshore administrative coordination, including POB (Personnel on Board) management through operational systems and spreadsheets, as well as crew cabin allocation and accommodation control onboard the unit.</p>
-      <p>Responsible for managing and maintaining operational documentation related to unit conditions, operational status, compliance records, and onboard administrative processes. Also handled radio communication with vessels operating alongside the unit, supporting operational coordination and offshore communication routines.</p>
-      <p>Performed a broad range of onboard administrative and documentation activities, contributing to organized offshore operations, personnel management, communication efficiency, and daily operational support within high-demand maritime environments.</p>
+            <!-- Right -->
+            <div class="lg:col-span-7">
+                <div class="bg-white dark:bg-zinc-900 rounded-3xl p-9 shadow">
+                    <h2 id="experience-title" class="text-3xl font-semibold mb-8">Experiência Profissional</h2>
+                    <div id="experience-container" class="space-y-12"></div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="item">
-      <div class="job-header">
-        <h3>Queiroz Galvão Óleo e Gás S.A. – Offshore Assistant Storekeeper</h3>
-        <span class="period">Jan 2011 – March 2011 | Laguna Star Drilling Platform</span>
-      </div>
-      <p>Laguna Star Drilling Platform (3-month contract) - I participated in the voyage of the unit that departed from Singapore to Brazil (75-day trip). I worked as a warehouse assistant and participated in the entire process of unloading materials up to the final stage (preparation for Brazil), in which we conducted a complete inventory of over 8,000 items. I was able to closely follow all stages and the physical and operational construction of a warehouse.</p>
-      <p>Skills developed:</p>
-      <ul>
-        <li>Organization</li>
-        <li>Inventory</li>
-        <li>Stock control and labeling</li>
-        <li>Stock management</li>
-        <li>Cargo handling</li>
-        <li>Deck cargo handling operations</li>
-        <li>Among others…</li>
-      </ul>
-    </div>
+    <footer class="bg-white dark:bg-zinc-900 py-10 border-t">
+        <div class="max-w-6xl mx-auto px-6 text-center text-zinc-500">
+            <p id="footer-year"></p>
+        </div>
+    </footer>
 
-    <div class="item">
-      <div class="job-header">
-        <h3>Wellstream – Assistant Storekeeper</h3>
-        <span class="period">July 2022 – Nov 2024 | Niteroi, Rio de Janeiro - Brazil</span>
-      </div>
-      <p>Aker Wayfare Systemic Vessel (temporary contract, Onshore) - Responsible for inventory control and the distribution of PPE (Personal Protective Equipment), materials, and operational equipment. I worked on the ship's operations during its stay at the shipyard in Niterói, Rio de Janeiro.</p>
-    </div>
+    <script>
+        const data = {
+            pt: {
+                name: "Marcelo Vianna Pacheco",
+                title: "Instrutor de Educação Física | Almoxarife | Coordenador de Materiais",
+                summary: "Sou profissional de Educação Física com forte experiência como instrutor de Ed. Física offshore onde atuei em um flotel de última geração. Antes disto, como possuo formação técnica em mecânica industrial e inglês fluente, desenvolvi vasta experiência e vivência offshore nacional e internacional atuando como almoxarife em diversos tipos de embarcações ao longo de mais de 8 anos.",
+                summaryTitle: "Resumo Profissional",
+                educationTitle: "Formação Acadêmica",
+                edu1: "Bacharelado em Educação Física (2005–2008)",
+                edu2: "Técnico em Mecânica Industrial (2009–2010)",
+                skillsTitle: "Competências",
+                skills: ["Almoxarifado Offshore", "Gestão de Inventário", "Logística", "TEROMARINE TM v2", "AMOS Business Suite", "Planejamento de Materiais", "Controle de Estoque"],
+                languagesTitle: "Idiomas",
+                languages: ["Português — Nativo", "English — Fluent"],
+                experienceTitle: "Experiência Profissional",
+                experiences: [
+                    { company: "Prosafe", role: "Instrutor de Ed. Física Offshore", period: "Ago 2019 – Dez 2022", location: "Flotel Safe Eurus", desc: "Atuei como Instrutor de Academia (GYM Instructor). Gerenciei as operações da academia a bordo e desenvolvi programas de treinamento físico para tripulações multinacionais, com foco na prevenção de lesões e na manutenção da saúde." },
+                    { company: "Subsea7", role: "Almoxarife Offshore / Coordenador de Materiais", period: "Jul 2015 – Out 2017", location: "PLSV Seven Rio", desc: "Fui responsável pela coordenação das operações de inventário e planejamento da estrutura do Almoxarifado utilizando o sistema TEROMARINE – TM v2." },
+                    { company: "BlueOOS / OOS International", role: "Almoxarife Offshore / Coordenador de Materiais", period: "Abr 2014 – Nov 2014", location: "Flotel Prometheus", desc: "Atuei como Coordenador e Gerente de Almoxarifado, supervisionando as operações, o planejamento estrutural e o gerenciamento das solicitações de materiais a bordo." },
+                    { company: "Atlantica Management (USA) Inc.", role: "Materials Coordinator", period: "Jun 2012 – Abr 2014", location: "Plataforma de Perfuração (China/Brasil)", desc: "Trabalhei no projeto desde a fase inicial de desenvolvimento na China, supervisionando todos os materiais e operações de almoxarifado." },
+                    { company: "MODEC", role: "Armazenista Offshore", period: "Fev 2012 – Mai 2012", location: "FPSO Cidade de Santos", desc: "Fui responsável pelo controle de estoque, criação e gestão de solicitações de materiais a bordo utilizando AMOS Business Suite 9." },
+                    { company: "McDermott International", role: "Operador de Rádio Offshore", period: "Ago 2011 – Out 2012", location: "PLSV Ágil", desc: "Prestei serviços de apoio operacional a aeronaves e coordenação administrativa offshore." },
+                    { company: "Queiroz Galvão Óleo e Gás", role: "Offshore Assistant Storekeeper", period: "Jan 2011 – Mar 2011", location: "Plataforma Laguna Star", desc: "Participei de todo o processo de descarregamento e realizei inventário completo de mais de 8.000 itens." },
+                    { company: "Wellstream", role: "Assistant Storekeeper", period: "Jul 2022 – Nov 2024", location: "Navio Aker Wayfare (Niterói)", desc: "Fui responsável pelo controle de estoque e distribuição de EPIs e materiais operacionais." },
+                    { company: "Força Aérea Brasileira (FAB)", role: "Soldado", period: "Jan 2004 – Dez 2008", location: "Base Militar do Galeão", desc: "Atuei no Pelotão de Infantaria e prestei suporte administrativo e técnico em Tecnologia da Informação." }
+                ]
+            },
+            en: {
+                name: "Marcelo Vianna Pacheco",
+                title: "Physical Education Instructor | Storekeeper | Materials Coordinator",
+                summary: "I am a Physical Education professional with extensive experience as an offshore GYM Instructor, having worked on a last-generation flotel. Before this, with a technical background in industrial mechanics and fluent English, I developed vast experience in the offshore sector.",
+                summaryTitle: "Professional Summary",
+                educationTitle: "Education",
+                edu1: "Bachelor's Degree in Physical Education (2005–2008)",
+                edu2: "Technical Degree in Industrial Mechanics (2009–2010)",
+                skillsTitle: "Skills",
+                skills: ["Offshore Warehouse", "Inventory Management", "Logistics", "TEROMARINE TM v2", "AMOS Business Suite", "Materials Planning", "Stock Control"],
+                languagesTitle: "Languages",
+                languages: ["Portuguese — Native", "English — Fluent"],
+                experienceTitle: "Professional Experience",
+                experiences: [
+                    { company: "Prosafe", role: "Offshore Physical Education Instructor", period: "Aug 2019 – Dec 2022", location: "Flotel Safe Eurus", desc: "I managed the onboard gym operations and developed physical training programs for multinational crews, focusing on injury prevention and health maintenance." },
+                    { company: "Subsea7", role: "Offshore Storekeeper / Materials Coordinator", period: "July 2015 – Oct 2017", location: "PLSV Seven Rio", desc: "I coordinated inventory operations and warehouse structure planning using the TEROMARINE – TM v2 system." },
+                    { company: "BlueOOS / OOS International", role: "Offshore Warehouse Clerk / Materials Coordinator", period: "Apr 2014 – Nov 2014", location: "Flotel Prometheus", desc: "I acted as Warehouse Coordinator and Manager, supervising operations and material requests onboard." },
+                    { company: "Atlantica Management (USA) Inc.", role: "Materials Coordinator", period: "Jun 2012 – Apr 2014", location: "Drilling Platform (China/Brazil)", desc: "I worked from the initial development phase in China, overseeing all materials and warehouse operations." },
+                    { company: "MODEC", role: "Offshore Warehouse", period: "Feb 2012 – May 2012", location: "FPSO Cidade de Santos", desc: "I was responsible for inventory control and material requests using AMOS Business Suite 9." },
+                    { company: "McDermott International", role: "Offshore Radio Operator", period: "Aug 2011 – Oct 2012", location: "PLSV Ágil", desc: "I provided operational support to aircraft and offshore administrative coordination." },
+                    { company: "Queiroz Galvão Oil and Gas", role: "Offshore Assistant Storekeeper", period: "Jan 2011 – Mar 2011", location: "Laguna Star Platform", desc: "I participated in the complete inventory of over 8,000 items during the Singapore to Brazil journey." },
+                    { company: "Wellstream", role: "Assistant Storekeeper", period: "Jul 2022 – Nov 2024", location: "Aker Wayfare Ship (Niterói)", desc: "I was responsible for inventory control and distribution of PPE and operational materials." },
+                    { company: "Brazilian Air Force (FAB)", role: "Soldier", period: "Jan 2004 – Dec 2008", location: "Galeão Military Base", desc: "I served in the Infantry Platoon and provided administrative and technical IT support." }
+                ]
+            }
+        };
 
-    <div class="item">
-      <div class="job-header">
-        <h3>Brazilian Air Force (FAB) – Soldier</h3>
-        <span class="period">Jan 2004 – Dec 2008 | Galeao Military Base, Brazil</span>
-      </div>
-      <p>Served as a Second-Class Soldier in the Brazilian Army, operating within the Infantry Platoon and supporting military operational activities, discipline routines, and security procedures. Also worked in the Information Technology sector of the Military Equipment Park, providing administrative and technical support for operational systems and internal processes.</p>
-      <p>Additionally, performed armed escort and national security duties, contributing to protection operations, asset security, and mission support activities within high-responsibility environments requiring discipline, operational readiness, teamwork, and strict compliance with security protocols.</p>
-    </div>
-  `,
-  skillsTitle: "SKILLS",
-  skills: "Offshore Experience, Health and Wellness, Fluent English, Bachelor’s degree in Physical Education, Technician in Industrial Mechanics.",
-  eduTitle: "EDUCATION",
-  education: "<strong>Bachelor’s degree in Physical Education</strong><br><strong>Technician in Industrial Mechanics</strong>",
-  langTitle: "LANGUAGES",
-  projectTitle: "PROJECTS", projects: "Online CV: https://marcelo-vianna-gym-instructor-cv.vercel.app", languages: "Portuguese (Native) • English (Fluent) • Spanish (Basic)"
-},
+        function switchLanguage(lang) {
+            const d = data[lang];
+            document.getElementById('btn-pt').classList.toggle('active-lang', lang === 'pt');
+            document.getElementById('btn-en').classList.toggle('active-lang', lang === 'en');
 
-pt: {
-  role: "Instrutor de Educação Física | Almoxarife Offshore | Coordenador de Materiais | Suporte Logístico",
-  contact: "marcelovianna2010@gmail.com | +55 22 9 9877-5857 | Saquarema - RJ, Brasil",
-  summaryTitle: "RESUMO",
-  summary: "Profissional experiente em operações offshore, com foco em almoxarifado, coordenação de materiais, suporte logístico, controle de estoque e bem-estar da tripulação em ambientes de alta demanda. Combina disciplina operacional, consciência de segurança, gestão de materiais e adaptabilidade com sólida formação em educação física, saúde e condicionamento físico. Fluente em inglês e com experiência em equipes multinacionais.",
-  expTitle: "EXPERIÊNCIA",
-  experience: `
-    <div class="item">
-      <div class="job-header">
-        <h3>Autônomo – UX/UI | Desenvolvedor Web</h3>
-        <span class="period">Jan de 2023 – Mar de 2026 | Cabo Frio - RJ, Brasil</span>
-      </div>
-      <p>Empresário - Desenvolvimento de sites e softwares (trabalho não offshore).</p>
-    </div>
+            document.getElementById('name').textContent = d.name;
+            document.getElementById('title').textContent = d.title;
+            document.getElementById("summary-title").textContent = d.summaryTitle;
+            document.getElementById("education-title").textContent = d.educationTitle;
+            document.getElementById('summary-text').textContent = d.summary;
+            document.getElementById('edu1').textContent = d.edu1;
+            document.getElementById('edu2').textContent = d.edu2;
+            document.getElementById('skills-title').textContent = d.skillsTitle;
+            document.getElementById('languages-title').textContent = d.languagesTitle;
+            document.getElementById('experience-title').textContent = d.experienceTitle;
 
-    <div class="item">
-      <div class="job-header">
-        <h3>Prosafe – Instrutor de Ginásio Offshore</h3>
-        <span class="period">Ago 2019 – Dez 2021 | Flotel Safe Eurus</span>
-      </div>
-      <p>Flotel Safe Eurus - Gerenciei as operações da academia a bordo e desenvolvi programas de treinamento físico para tripulações multinacionais, com foco na prevenção de lesões e na manutenção da saúde em ambientes offshore.</p>
-    </div>
+            document.getElementById('skills-container').innerHTML = d.skills.map(s => `<span class="px-5 py-3 bg-zinc-100 dark:bg-zinc-800 rounded-2xl text-sm">${s}</span>`).join('');
+            document.getElementById('languages-container').innerHTML = d.languages.map(l => `<div class="flex justify-between"><span>${l}</span></div>`).join('');
 
-    <div class="item">
-      <div class="job-header">
-        <h3>Subsea7 – Almoxarife Offshore / Coordenador de Materiais</h3>
-        <span class="period">Jul 2015 – Out 2017 | Embarcações PLSV</span>
-      </div>
-      <p>Embarcações PLSV - Coordenação das operações de inventário e planejamento da estrutura do Almoxarifado utilizando o sistema TEROMARINE – TM v2. Criação e gestão de manifestos logísticos para carga/descarga de materiais offshore, mantendo a organização operacional e a rastreabilidade da cadeia de suprimentos.</p>
-    </div>
+            document.getElementById('experience-container').innerHTML = d.experiences.map(exp => `
+                <div class="border-l-4 border-[#0a66c2] pl-7">
+                    <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-3">
+                        <div>
+                            <h3 class="font-semibold text-xl">${exp.company}</h3>
+                            <p class="text-[#0a66c2]">${exp.role}</p>
+                        </div>
+                        <div class="text-sm text-zinc-500 dark:text-zinc-400 lg:text-right lg:flex-shrink-0">${exp.period}<br>${exp.location}</div>
+                    </div>
+                    <p class="mt-5 text-zinc-600 dark:text-zinc-400">${exp.desc}</p>
+                </div>
+            `).join('');
+        }
 
-    <div class="item">
-      <div class="job-header">
-        <h3>BlueOOS / OOS Internacional – Almoxarife Offshore / Coordenador de Materiais</h3>
-        <span class="period">Abr 2014 – Nov 2014 | Flotel Prometheus</span>
-      </div>
-      <p>Flotel Prometheus (contrato de 6 meses) - Como Coordenador e Gerente de Almoxarifado, sou responsável por supervisionar as operações, o planejamento estrutural e o gerenciamento das solicitações de materiais a bordo.</p>
-    </div>
+        function setTheme(theme) {
 
-    <div class="item">
-      <div class="job-header">
-        <h3>Atlantica Management (USA) Inc. – Coordenador de Materiais</h3>
-        <span class="period">Jun 2012 – Abr 2014 | China / Brasil</span>
-      </div>
-      <p>Plataforma de Perfuração para Licitação (China/Brasil) - Trabalhei no projeto desde a sua fase inicial de desenvolvimento na China, supervisionando todos os materiais e operações de almoxarifado durante a preparação da plataforma. Gerenciei o planejamento do layout do Almoxarifado, a organização do estoque e a estruturação operacional para garantir a prontidão da plataforma para implantação no Brasil.</p>
-      <p>Durante os três meses em que a plataforma esteve atracada no Almoxarifado 7 do Porto Offshore Triunfo Logística, no Rio de Janeiro, Brasil, para os preparativos finais para o início das operações offshore, também adquiri experiência prática em logística portuária e coordenação de materiais.</p>
-      <p>Atuei como Coordenador de Materiais, supervisionando solicitações de materiais, processos de inventário e operações logísticas a bordo, utilizando os sistemas AMOS Business Suite 2 e SAP. Planejei a estrutura do almoxarifado e os fluxos de trabalho de controle de materiais, garantindo suporte operacional eficiente, rastreabilidade e organização em ambientes offshore.</p>
-    </div>
+            const html = document.documentElement;
+            const icon = document.getElementById("theme-icon");
 
-    <div class="item">
-      <div class="job-header">
-        <h3>MODEC – Armazenista Offshore</h3>
-        <span class="period">Fev 2012 – Mai 2012 | FPSO Cidade de Santos</span>
-      </div>
-      <p>FPSO Cidade de Santos (contrato temporário) - Responsável pelo controle de estoque, criação e gestão de solicitações de materiais a bordo e organização do almoxarifado em ambientes operacionais offshore. Possuo experiência em processos de armazenagem de materiais, identificação de prateleiras, rastreamento de estoque e otimização do inventário de almoxarifado para garantir a eficiência operacional e a disponibilidade de materiais a bordo.</p>
-      <p>Utilizo o AMOS Business Suite 9 para controle de estoque, gerenciamento de solicitações de materiais e administração, o que garante um gerenciamento de estoque preciso, rastreabilidade e suporte logístico organizado para operações offshore.</p>
-    </div>
+            if (theme === "dark") {
 
-    <div class="item">
-      <div class="job-header">
-        <h3>McDermott International, Ltd – Operador de Rádio Offshore</h3>
-        <span class="period">Ago 2011 – Out 2012 | PLSV Ágil</span>
-      </div>
-      <p>Embarcação AGILE PLSV (contrato de 3 meses) - Prestou serviços de apoio operacional a aeronaves e coordenação administrativa offshore, incluindo gestão de pessoal a bordo (POB) através de sistemas operacionais e planilhas, bem como alocação de cabines para a tripulação e controle de acomodações a bordo da unidade.</p>
-      <p>Responsável por gerenciar e manter a documentação operacional relacionada às condições da unidade, status operacional, registros de conformidade e processos administrativos a bordo. Também lidava com a comunicação via rádio com as embarcações que operavam ao lado da unidade, apoiando a coordenação operacional e as rotinas de comunicação em alto-mar.</p>
-      <p>Desempenhei uma ampla gama de atividades administrativas e de documentação a bordo, contribuindo para a organização das operações offshore, gestão de pessoal, eficiência na comunicação e suporte operacional diário em ambientes marítimos de alta exigência.</p>
-    </div>
+                html.classList.add("dark");
 
-    <div class="item">
-      <div class="job-header">
-        <h3>Queiroz Galvão Óleo e Gás S.A. – Assistente de Almoxarifado Offshore</h3>
-        <span class="period">Jan 2011 – Mar 2011 | Plataforma Laguna Star</span>
-      </div>
-      <p>Plataforma de Perfuração Laguna Star (contrato de 3 meses) - Participei da viagem da unidade que partiu de Singapura para o Brasil (viagem de 75 dias). Trabalhei como auxiliar de almoxarifado e participei de todo o processo de descarregamento de materiais até a etapa final (preparação para o Brasil), na qual realizamos um inventário completo de mais de 8.000 itens. Pude acompanhar de perto todas as etapas e a construção física e operacional de um almoxarifado.</p>
-      <p>Habilidades desenvolvidas:</p>
-      <ul>
-        <li>Organização</li>
-        <li>Inventário</li>
-        <li>Controle de estoque e etiquetagem</li>
-        <li>Gestão de estoque</li>
-        <li>Manuseio de carga</li>
-        <li>Operações de movimentação de carga no convés</li>
-        <li>Entre outros…</li>
-      </ul>
-    </div>
+                icon.classList.remove("fa-moon");
+                icon.classList.add("fa-sun");
 
-    <div class="item">
-      <div class="job-header">
-        <h3>Wellstream – Assistente de Almoxarifado</h3>
-        <span class="period">Jul 2022 – Nov 2024 | Niterói, RJ - Brasil</span>
-      </div>
-      <p>Navio Sistêmico Aker Wayfare (contrato temporário, em terra) - Responsável pelo controle de estoque e distribuição de EPIs (Equipamentos de Proteção Individual), materiais e equipamentos operacionais. Trabalhei nas operações do navio durante sua estadia no estaleiro em Niterói, Rio de Janeiro.</p>
-    </div>
+            } else {
 
-    <div class="item">
-      <div class="job-header">
-        <h3>Força Aérea Brasileira (FAB) – Soldado</h3>
-        <span class="period">Jan 2004 – Dez 2008 | Base Militar do Galeão, Brasil</span>
-      </div>
-      <p>Servi como Soldado de Segunda Classe no Exército Brasileiro, atuando no Pelotão de Infantaria e apoiando atividades operacionais militares, rotinas disciplinares e procedimentos de segurança. Também trabalhei no setor de Tecnologia da Informação do Parque de Equipamentos Militares, prestando suporte administrativo e técnico para sistemas operacionais e processos internos.</p>
-      <p>Além disso, desempenhei funções de escolta armada e segurança nacional, contribuindo para operações de proteção, segurança de ativos e atividades de apoio à missão em ambientes de alta responsabilidade que exigiam disciplina, prontidão operacional, trabalho em equipe e estrita conformidade com os protocolos de segurança.</p>
-    </div>
-  `,
-  skillsTitle: "HABILIDADES",
-  skills: "Experiência offshore, Saúde e bem-estar, Inglês fluente, Bacharelado em Educação Física, Técnico em Mecânica Industrial.",
-  eduTitle: "EDUCAÇÃO",
-  education: "<strong>Licenciatura em Educação Física</strong><br><strong>Técnico em Mecânica Industrial</strong>",
-  langTitle: "IDIOMAS",
-  projectTitle: "PROJETOS", projects: "Currículo online: https://marcelo-vianna-gym-instructor-cv.vercel.app", languages: "Português (Nativo) • Inglês (Fluente) • Espanhol (Básico)"
-}
-};
+                html.classList.remove("dark");
 
-function setLang(l) {
-  document.documentElement.lang = l === 'en' ? 'en' : 'pt-BR';
-  document.getElementById('role').innerHTML = t[l].role;
-  document.getElementById('contact').innerHTML = t[l].contact;
-  document.getElementById('summaryTitle').innerHTML = t[l].summaryTitle;
-  document.getElementById('summary').innerHTML = t[l].summary;
-  document.getElementById('expTitle').innerHTML = t[l].expTitle;
-  document.getElementById('experience').innerHTML = t[l].experience;
-  document.getElementById('skillsTitle').innerHTML = t[l].skillsTitle;
-  document.getElementById('skills').innerHTML = t[l].skills;
-  document.getElementById('eduTitle').innerHTML = t[l].eduTitle;
-  document.getElementById('education').innerHTML = t[l].education;
-  document.getElementById('projectTitle').innerHTML = t[l].projectTitle;
-  document.getElementById('projects').innerHTML = t[l].projects;
-  document.getElementById('langTitle').innerHTML = t[l].langTitle;
-  document.getElementById('languages').innerHTML = t[l].languages;
-}
+                icon.classList.remove("fa-sun");
+                icon.classList.add("fa-moon");
 
-function toggleTheme() {
-  document.documentElement.dataset.theme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-}
+            }
 
-// Inicializa no idioma português ou inglês
-setLang('pt');
-</script>
+            localStorage.setItem("theme", theme);
+
+        }
+
+        function toggleDarkMode() {
+
+            const dark = document.documentElement.classList.contains("dark");
+
+            setTheme(dark ? "light" : "dark");
+
+        }
+
+        window.onload = function () {
+
+            switchLanguage("pt");
+
+            document.getElementById("footer-year").innerHTML =
+                `© ${new Date().getFullYear()} Marcelo Vianna Pacheco`;
+
+            const savedTheme = localStorage.getItem("theme");
+
+            if (savedTheme) {
+
+                setTheme(savedTheme);
+
+            } else {
+
+                if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                    setTheme("dark");
+                } else {
+                    setTheme("light");
+                }
+
+            }
+
+        };
+    </script>
 </body>
+
 </html>
