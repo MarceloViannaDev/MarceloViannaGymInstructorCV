@@ -1,222 +1,376 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Marcelo Vianna Pacheco | Professional CV</title>
+		<script src="https://cdn.tailwindcss.com"></script>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marcelo Vianna Pacheco | Professional CV</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+		<script>
+			tailwind.config = {
+				darkMode: "class",
+			};
+		</script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap");
 
-    <script>
-        tailwind.config = {
-            darkMode: 'class'
-        }
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap');
+			.hero-bg {
+				background: linear-gradient(135deg, #0a66c2 0%, #1e88e5 100%);
+			}
 
-        .hero-bg {
-            background: linear-gradient(135deg, #0a66c2 0%, #1e88e5 100%);
-        }
+			html {
+				transition:
+					background-color 0.3s,
+					color 0.3s;
+			}
 
-        html {
-            transition: background-color .3s, color .3s;
-        }
+			.active-lang {
+				background: #0a66c2;
+				color: white;
+			}
 
-        .active-lang {
-            background: #0a66c2;
-            color: white;
-        }
+			.dark .active-lang {
+				background: #1e88e5;
+			}
 
-        .dark .active-lang {
-            background: #1e88e5;
-        }
+			#theme-icon {
+				transition: transform 0.3s;
+			}
 
-        #theme-icon {
-            transition: transform .3s;
-        }
+			.dark #theme-icon {
+				transform: rotate(180deg);
+			}
+		</style>
+	</head>
 
-        .dark #theme-icon {
-            transform: rotate(180deg);
-        }
-    </style>
-</head>
-
-<body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 min-h-screen transition-colors duration-300">
-    <!-- Navbar -->
-    <nav class="bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <!-- <div
+	<body
+		class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 min-h-screen transition-colors duration-300"
+	>
+		<!-- Navbar -->
+		<nav class="bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 sticky top-0 z-50">
+			<div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+				<div class="flex items-center gap-3">
+					<!-- <div
                     class="w-10 h-10 bg-[#0a66c2] rounded-full flex items-center justify-center text-white font-bold text-2xl">
                     MV</div> -->
-                <h1 class="text-2xl font-semibold">Marcelo Vianna Pacheco - CV Online</h1>
-            </div>
+					<h1 class="text-2xl font-semibold">Marcelo Vianna Pacheco - CV Online</h1>
+				</div>
 
-            <div class="flex items-center gap-4">
-                <div class="flex border border-zinc-300 dark:border-zinc-700 rounded-full p-1">
-                    <button onclick="switchLanguage('pt')" id="btn-pt"
-                        class="px-5 py-2 text-sm font-medium rounded-full transition-all active-lang">🇧🇷 PT</button>
-                    <button onclick="switchLanguage('en')" id="btn-en"
-                        class="px-5 py-2 text-sm font-medium rounded-full transition-all">🇬🇧 EN</button>
-                </div>
+				<div class="flex items-center gap-4">
+					<div class="flex border border-zinc-300 dark:border-zinc-700 rounded-full p-1">
+						<button
+							onclick="switchLanguage('pt')"
+							id="btn-pt"
+							class="px-5 py-2 text-sm font-medium rounded-full transition-all active-lang"
+						>
+							🇧🇷 PT
+						</button>
+						<button
+							onclick="switchLanguage('en')"
+							id="btn-en"
+							class="px-5 py-2 text-sm font-medium rounded-full transition-all"
+						>
+							🇬🇧 EN
+						</button>
+					</div>
 
-                <a href="https://www.linkedin.com/in/marceloviannaoffshorestorekeeper/" target="_blank"
-                    class="p-3 text-[#0a66c2] hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-2xl">
-                    <i class="fab fa-linkedin text-2xl"></i>
-                </a>
-                <a href="https://whatsform.com/OzMUJ5" target="_blank"
-                    class="p-3 text-green-600 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-2xl">
-                    <i class="fab fa-whatsapp text-2xl"></i>
-                </a>
+					<a
+						href="https://www.linkedin.com/in/marceloviannaoffshorestorekeeper/"
+						target="_blank"
+						class="p-3 text-[#0a66c2] hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-2xl"
+					>
+						<i class="fab fa-linkedin text-2xl"></i>
+					</a>
+					<a
+						href="https://whatsform.com/OzMUJ5"
+						target="_blank"
+						class="p-3 text-green-600 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-2xl"
+					>
+						<i class="fab fa-whatsapp text-2xl"></i>
+					</a>
 
-                <button onclick="toggleDarkMode()" class="p-3 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-2xl">
-                    <i id="theme-icon" class="fas fa-moon text-2xl"></i>
-                </button>
-            </div>
-        </div>
-    </nav>
+					<button onclick="toggleDarkMode()" class="p-3 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-2xl">
+						<i id="theme-icon" class="fas fa-moon text-2xl"></i>
+					</button>
+				</div>
+			</div>
+		</nav>
 
-    <div class="max-w-6xl mx-auto px-6 py-12">
-        <!-- Hero -->
-        <div class="hero-bg text-white rounded-3xl p-12 mb-16 flex flex-col lg:flex-row gap-12 items-center">
-            <img src="Avatar_Circle.jpg" alt="Marcelo Vianna Pacheco"
-                class="w-52 h-52 rounded-full object-cover border-8 border-white shadow-2xl">
-            <div class="flex-1 text-center lg:text-left">
-                <h1 id="name" class="text-5xl font-semibold mb-3">Marcelo Vianna Pacheco</h1>
-                <p id="title" class="text-2xl opacity-90 mb-8"></p>
-                <div class="flex flex-wrap justify-center lg:justify-start gap-x-10 gap-y-4 text-lg">
-                    <div><i class="fas fa-map-marker-alt"></i> Rio de Janeiro, Brasil</div>
-                    <div><i class="fas fa-envelope"></i> marcelovianna2010@gmail.com</div>
-                    <div><i class="fas fa-phone"></i> +55 (22) 99877-5857</div>
-                </div>
-            </div>
-        </div>
+		<div class="max-w-6xl mx-auto px-6 py-12">
+			<!-- Hero -->
+			<div class="hero-bg text-white rounded-3xl p-12 mb-16 flex flex-col lg:flex-row gap-12 items-center">
+				<img
+					src="Avatar_Circle.jpg"
+					alt="Marcelo Vianna Pacheco"
+					class="w-52 h-52 rounded-full object-cover border-8 border-white shadow-2xl"
+				/>
+				<div class="flex-1 text-center lg:text-left">
+					<h1 id="name" class="text-5xl font-semibold mb-3">Marcelo Vianna Pacheco</h1>
+					<p id="title" class="text-2xl opacity-90 mb-8"></p>
+					<div class="flex flex-wrap justify-center lg:justify-start gap-x-10 gap-y-4 text-lg">
+						<div><i class="fas fa-map-marker-alt"></i> Rio de Janeiro, Brasil</div>
+						<div><i class="fas fa-envelope"></i> marcelovianna2010@gmail.com</div>
+						<div><i class="fas fa-phone"></i> +55 (22) 99877-5857</div>
+					</div>
+				</div>
+			</div>
 
-        <div class="grid lg:grid-cols-12 gap-12">
-            <!-- Left -->
-            <div class="lg:col-span-5 space-y-10">
-                <div class="bg-white dark:bg-zinc-900 rounded-3xl p-9 shadow">
-                    <h2 id="summary-title" class="text-3xl font-semibold mb-6">Resumo Profissional</h2>
-                    <p id="summary-text" class="text-zinc-600 dark:text-zinc-400 leading-relaxed text-[17px]"></p>
-                </div>
+			<div class="grid lg:grid-cols-12 gap-12">
+				<!-- Left -->
+				<div class="lg:col-span-5 space-y-10">
+					<div class="bg-white dark:bg-zinc-900 rounded-3xl p-9 shadow">
+						<h2 id="summary-title" class="text-3xl font-semibold mb-6">Resumo Profissional</h2>
+						<p id="summary-text" class="text-zinc-600 dark:text-zinc-400 leading-relaxed text-[17px]"></p>
+					</div>
 
-                <div class="bg-white dark:bg-zinc-900 rounded-3xl p-9 shadow">
-                    <h2 id="education-title" class="text-3xl font-semibold mb-6">Formação Acadêmica</h2>
-                    <div class="space-y-8">
-                        <div>
-                            <p id="edu1" class="font-semibold text-xl"></p>
-                            <p class="text-zinc-500 dark:text-zinc-400">Graduação Completa</p>
-                        </div>
-                        <div>
-                            <p id="edu2" class="font-semibold text-xl"></p>
-                            <p class="text-zinc-500 dark:text-zinc-400">Formação Técnica</p>
-                        </div>
-                    </div>
-                </div>
+					<div class="bg-white dark:bg-zinc-900 rounded-3xl p-9 shadow">
+						<h2 id="education-title" class="text-3xl font-semibold mb-6">Formação Acadêmica</h2>
+						<div class="space-y-8">
+							<div>
+								<p id="edu1" class="font-semibold text-xl"></p>
+								<p class="text-zinc-500 dark:text-zinc-400">Graduação Completa</p>
+							</div>
+							<div>
+								<p id="edu2" class="font-semibold text-xl"></p>
+								<p class="text-zinc-500 dark:text-zinc-400">Formação Técnica</p>
+							</div>
+						</div>
+					</div>
 
-                <div class="bg-white dark:bg-zinc-900 rounded-3xl p-9 shadow">
-                    <h2 id="skills-title" class="text-3xl font-semibold mb-6">Competências</h2>
-                    <div id="skills-container" class="flex flex-wrap gap-3"></div>
-                </div>
+					<div class="bg-white dark:bg-zinc-900 rounded-3xl p-9 shadow">
+						<h2 id="skills-title" class="text-3xl font-semibold mb-6">Competências</h2>
+						<div id="skills-container" class="flex flex-wrap gap-3"></div>
+					</div>
 
-                <div class="bg-white dark:bg-zinc-900 rounded-3xl p-9 shadow">
-                    <h2 id="languages-title" class="text-3xl font-semibold mb-6">Idiomas</h2>
-                    <div id="languages-container" class="space-y-5"></div>
-                </div>
-            </div>
+					<div class="bg-white dark:bg-zinc-900 rounded-3xl p-9 shadow">
+						<h2 id="languages-title" class="text-3xl font-semibold mb-6">Idiomas</h2>
+						<div id="languages-container" class="space-y-5"></div>
+					</div>
+				</div>
 
-            <!-- Right -->
-            <div class="lg:col-span-7">
-                <div class="bg-white dark:bg-zinc-900 rounded-3xl p-9 shadow">
-                    <h2 id="experience-title" class="text-3xl font-semibold mb-8">Experiência Profissional</h2>
-                    <div id="experience-container" class="space-y-12"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+				<!-- Right -->
+				<div class="lg:col-span-7">
+					<div class="bg-white dark:bg-zinc-900 rounded-3xl p-9 shadow">
+						<h2 id="experience-title" class="text-3xl font-semibold mb-8">Experiência Profissional</h2>
+						<div id="experience-container" class="space-y-12"></div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <footer class="bg-white dark:bg-zinc-900 py-10 border-t">
-        <div class="max-w-6xl mx-auto px-6 text-center text-zinc-500">
-            <p id="footer-year"></p>
-        </div>
-    </footer>
+		<footer class="bg-white dark:bg-zinc-900 py-10 border-t">
+			<div class="max-w-6xl mx-auto px-6 text-center text-zinc-500">
+				<p id="footer-year"></p>
+			</div>
+		</footer>
 
-    <script>
-        const data = {
-            pt: {
-                name: "Marcelo Vianna Pacheco",
-                title: "Instrutor de Educação Física | Almoxarife | Coordenador de Materiais",
-                summary: "Sou profissional de Educação Física com forte experiência como instrutor de Ed. Física offshore onde atuei em um flotel de última geração. Antes disto, como possuo formação técnica em mecânica industrial e inglês fluente, desenvolvi vasta experiência e vivência offshore nacional e internacional atuando como almoxarife em diversos tipos de embarcações ao longo de mais de 8 anos.",
-                summaryTitle: "Resumo Profissional",
-                educationTitle: "Formação Acadêmica",
-                edu1: "Bacharelado em Educação Física (2005–2008)",
-                edu2: "Técnico em Mecânica Industrial (2009–2010)",
-                skillsTitle: "Competências",
-                skills: ["Almoxarifado Offshore", "Gestão de Inventário", "Logística", "TEROMARINE TM v2", "AMOS Business Suite", "Planejamento de Materiais", "Controle de Estoque"],
-                languagesTitle: "Idiomas",
-                languages: ["Português — Nativo", "English — Fluent"],
-                experienceTitle: "Experiência Profissional",
-                experiences: [
-                    { company: "Prosafe", role: "Instrutor de Ed. Física Offshore", period: "Ago 2019 – Dez 2022", location: "Flotel Safe Eurus", desc: "Atuei como Instrutor de Academia (GYM Instructor). Gerenciei as operações da academia a bordo e desenvolvi programas de treinamento físico para tripulações multinacionais, com foco na prevenção de lesões e na manutenção da saúde." },
-                    { company: "Subsea7", role: "Almoxarife Offshore / Coordenador de Materiais", period: "Jul 2015 – Out 2017", location: "PLSV Seven Rio", desc: "Fui responsável pela coordenação das operações de inventário e planejamento da estrutura do Almoxarifado utilizando o sistema TEROMARINE – TM v2." },
-                    { company: "BlueOOS / OOS International", role: "Almoxarife Offshore / Coordenador de Materiais", period: "Abr 2014 – Nov 2014", location: "Flotel Prometheus", desc: "Atuei como Coordenador e Gerente de Almoxarifado, supervisionando as operações, o planejamento estrutural e o gerenciamento das solicitações de materiais a bordo." },
-                    { company: "Atlantica Management (USA) Inc.", role: "Materials Coordinator", period: "Jun 2012 – Abr 2014", location: "Plataforma de Perfuração (China/Brasil)", desc: "Trabalhei no projeto desde a fase inicial de desenvolvimento na China, supervisionando todos os materiais e operações de almoxarifado." },
-                    { company: "MODEC", role: "Armazenista Offshore", period: "Fev 2012 – Mai 2012", location: "FPSO Cidade de Santos", desc: "Fui responsável pelo controle de estoque, criação e gestão de solicitações de materiais a bordo utilizando AMOS Business Suite 9." },
-                    { company: "McDermott International", role: "Operador de Rádio Offshore", period: "Ago 2011 – Out 2012", location: "PLSV Ágil", desc: "Prestei serviços de apoio operacional a aeronaves e coordenação administrativa offshore." },
-                    { company: "Queiroz Galvão Óleo e Gás", role: "Offshore Assistant Storekeeper", period: "Jan 2011 – Mar 2011", location: "Plataforma Laguna Star", desc: "Participei de todo o processo de descarregamento e realizei inventário completo de mais de 8.000 itens." },
-                    { company: "Wellstream", role: "Assistant Storekeeper", period: "Jul 2022 – Nov 2024", location: "Navio Aker Wayfare (Niterói)", desc: "Fui responsável pelo controle de estoque e distribuição de EPIs e materiais operacionais." },
-                    { company: "Força Aérea Brasileira (FAB)", role: "Soldado", period: "Jan 2004 – Dez 2008", location: "Base Militar do Galeão", desc: "Atuei no Pelotão de Infantaria e prestei suporte administrativo e técnico em Tecnologia da Informação." }
-                ]
-            },
-            en: {
-                name: "Marcelo Vianna Pacheco",
-                title: "Physical Education Instructor | Storekeeper | Materials Coordinator",
-                summary: "I am a Physical Education professional with extensive experience as an offshore GYM Instructor, having worked on a last-generation flotel. Before this, with a technical background in industrial mechanics and fluent English, I developed vast experience in the offshore sector.",
-                summaryTitle: "Professional Summary",
-                educationTitle: "Education",
-                edu1: "Bachelor's Degree in Physical Education (2005–2008)",
-                edu2: "Technical Degree in Industrial Mechanics (2009–2010)",
-                skillsTitle: "Skills",
-                skills: ["Offshore Warehouse", "Inventory Management", "Logistics", "TEROMARINE TM v2", "AMOS Business Suite", "Materials Planning", "Stock Control"],
-                languagesTitle: "Languages",
-                languages: ["Portuguese — Native", "English — Fluent"],
-                experienceTitle: "Professional Experience",
-                experiences: [
-                    { company: "Prosafe", role: "Offshore Physical Education Instructor", period: "Aug 2019 – Dec 2022", location: "Flotel Safe Eurus", desc: "I managed the onboard gym operations and developed physical training programs for multinational crews, focusing on injury prevention and health maintenance." },
-                    { company: "Subsea7", role: "Offshore Storekeeper / Materials Coordinator", period: "July 2015 – Oct 2017", location: "PLSV Seven Rio", desc: "I coordinated inventory operations and warehouse structure planning using the TEROMARINE – TM v2 system." },
-                    { company: "BlueOOS / OOS International", role: "Offshore Warehouse Clerk / Materials Coordinator", period: "Apr 2014 – Nov 2014", location: "Flotel Prometheus", desc: "I acted as Warehouse Coordinator and Manager, supervising operations and material requests onboard." },
-                    { company: "Atlantica Management (USA) Inc.", role: "Materials Coordinator", period: "Jun 2012 – Apr 2014", location: "Drilling Platform (China/Brazil)", desc: "I worked from the initial development phase in China, overseeing all materials and warehouse operations." },
-                    { company: "MODEC", role: "Offshore Warehouse", period: "Feb 2012 – May 2012", location: "FPSO Cidade de Santos", desc: "I was responsible for inventory control and material requests using AMOS Business Suite 9." },
-                    { company: "McDermott International", role: "Offshore Radio Operator", period: "Aug 2011 – Oct 2012", location: "PLSV Ágil", desc: "I provided operational support to aircraft and offshore administrative coordination." },
-                    { company: "Queiroz Galvão Oil and Gas", role: "Offshore Assistant Storekeeper", period: "Jan 2011 – Mar 2011", location: "Laguna Star Platform", desc: "I participated in the complete inventory of over 8,000 items during the Singapore to Brazil journey." },
-                    { company: "Wellstream", role: "Assistant Storekeeper", period: "Jul 2022 – Nov 2024", location: "Aker Wayfare Ship (Niterói)", desc: "I was responsible for inventory control and distribution of PPE and operational materials." },
-                    { company: "Brazilian Air Force (FAB)", role: "Soldier", period: "Jan 2004 – Dec 2008", location: "Galeão Military Base", desc: "I served in the Infantry Platoon and provided administrative and technical IT support." }
-                ]
-            }
-        };
+		<script>
+			const data = {
+				pt: {
+					name: "Marcelo Vianna Pacheco",
+					title: "Instrutor de Educação Física | Almoxarife | Coordenador de Materiais",
+					summary:
+						"Sou profissional de Educação Física com forte experiência como instrutor de Ed. Física offshore onde atuei em um flotel de última geração. Antes disto, como possuo formação técnica em mecânica industrial e inglês fluente, desenvolvi vasta experiência e vivência offshore nacional e internacional atuando como almoxarife em diversos tipos de embarcações ao longo de mais de 8 anos.",
+					summaryTitle: "Resumo Profissional",
+					educationTitle: "Formação Acadêmica",
+					edu1: "Bacharelado em Educação Física (2005–2008)",
+					edu2: "Técnico em Mecânica Industrial (2009–2010)",
+					skillsTitle: "Competências",
+					skills: [
+						"Almoxarifado Offshore",
+						"Gestão de Inventário",
+						"Logística",
+						"TEROMARINE TM v2",
+						"AMOS Business Suite",
+						"Planejamento de Materiais",
+						"Controle de Estoque",
+					],
+					languagesTitle: "Idiomas",
+					languages: ["Português — Nativo", "English — Fluent"],
+					experienceTitle: "Experiência Profissional",
+					experiences: [
+						{
+							company: "Prosafe",
+							role: "Instrutor de Ed. Física Offshore",
+							period: "Ago 2019 – Dez 2022",
+							location: "Flotel Safe Eurus",
+							desc: "Atuei como Instrutor de Academia (GYM Instructor). Gerenciei as operações da academia a bordo e desenvolvi programas de treinamento físico para tripulações multinacionais, com foco na prevenção de lesões e na manutenção da saúde.",
+						},
+						{
+							company: "Subsea7",
+							role: "Almoxarife Offshore / Coordenador de Materiais",
+							period: "Jul 2015 – Out 2017",
+							location: "PLSV Seven Rio",
+							desc: "Fui responsável pela coordenação das operações de inventário e planejamento da estrutura do Almoxarifado utilizando o sistema TEROMARINE – TM v2.",
+						},
+						{
+							company: "BlueOOS / OOS International",
+							role: "Almoxarife Offshore / Coordenador de Materiais",
+							period: "Abr 2014 – Nov 2014",
+							location: "Flotel Prometheus",
+							desc: "Atuei como Coordenador e Gerente de Almoxarifado, supervisionando as operações, o planejamento estrutural e o gerenciamento das solicitações de materiais a bordo.",
+						},
+						{
+							company: "Atlantica Management (USA) Inc.",
+							role: "Coordenador de Materiais",
+							period: "Jun 2012 – Abr 2014",
+							location: "Plataforma de Perfuração (China/Brasil)",
+							desc: "Trabalhei no projeto desde a fase inicial de desenvolvimento na China, supervisionando todos os materiais e operações de almoxarifado.",
+						},
+						{
+							company: "MODEC",
+							role: "Almoxarife Offshore",
+							period: "Fev 2012 – Mai 2012",
+							location: "FPSO Cidade de Santos",
+							desc: "Fui responsável pelo controle de estoque, criação e gestão de solicitações de materiais a bordo utilizando AMOS Business Suite 9.",
+						},
+						{
+							company: "McDermott International",
+							role: "Operador de Rádio Offshore",
+							period: "Ago 2011 – Out 2012",
+							location: "PLSV Ágil",
+							desc: "Prestei serviços de apoio operacional a aeronaves e coordenação administrativa offshore.",
+						},
+						{
+							company: "Queiroz Galvão Óleo e Gás",
+							role: "Offshore Assistant Storekeeper",
+							period: "Jan 2011 – Mar 2011",
+							location: "Plataforma Laguna Star",
+							desc: "Participei de todo o processo de descarregamento e realizei inventário completo de mais de 8.000 itens.",
+						},
+						{
+							company: "Wellstream",
+							role: "Assistant Storekeeper",
+							period: "Jul 2010",
+							location: "Navio Aker Wayfare (Niterói)",
+							desc: "Fui responsável pelo controle de estoque e distribuição de EPIs e materiais operacionais.",
+						},
+						{
+							company: "Força Aérea Brasileira (FAB)",
+							role: "Soldado",
+							period: "Jan 2004 – Dez 2008",
+							location: "Base Militar do Galeão",
+							desc: "Atuei no Pelotão de Infantaria e prestei suporte administrativo e técnico em Tecnologia da Informação.",
+						},
+					],
+				},
+				en: {
+					name: "Marcelo Vianna Pacheco",
+					title: "Gym Teacher | Storekeeper | Logistics & Planning | Offshore",
+					summary:
+						"I am a Physical Education professional with extensive experience as an offshore GYM Instructor, having worked on a last-generation flotel. Before this, with a technical background in industrial mechanics and fluent English, I developed vast experience in the offshore sector.",
+					summaryTitle: "Professional Summary",
+					educationTitle: "Education",
+					edu1: "Bachelor's Degree in Physical Education (2005–2008)",
+					edu2: "Technical Degree in Industrial Mechanics (2009–2010)",
+					skillsTitle: "Skills",
+					skills: [
+            "Gym Teacher",
+            "Physical Education",
+						"Offshore Warehouse",
+						"Inventory Management",
+						"Logistics",
+						"Materials Planning",
+						"Stock Control",
+					],
+					languagesTitle: "Languages",
+					languages: ["Portuguese — Native", "English — Fluent"],
+					experienceTitle: "Professional Experience",
+					experiences: [
+						{
+							company: "Prosafe",
+							role: "Offshore Physical Education Instructor",
+							period: "Aug 2019 – Dec 2022",
+							location: "Flotel Safe Eurus",
+							desc: "I managed the onboard gym operations and developed physical training programs for multinational crews, focusing on injury prevention and health maintenance.",
+						},
+						{
+							company: "Subsea7",
+							role: "Offshore Storekeeper / Materials Coordinator",
+							period: "July 2015 – Oct 2017",
+							location: "PLSV Seven Rio",
+							desc: "I coordinated inventory operations and warehouse structure planning using the TEROMARINE – TM v2 system.",
+						},
+						{
+							company: "BlueOOS / OOS International",
+							role: "Offshore Warehouse Clerk / Materials Coordinator",
+							period: "Apr 2014 – Nov 2014",
+							location: "Flotel Prometheus",
+							desc: "I acted as Warehouse Coordinator and Manager, supervising operations and material requests onboard.",
+						},
+						{
+							company: "Atlantica Management (USA) Inc.",
+							role: "Materials Coordinator",
+							period: "Jun 2012 – Apr 2014",
+							location: "Drilling Platform (China/Brazil)",
+							desc: "I worked from the initial development phase in China, overseeing all materials and warehouse operations.",
+						},
+						{
+							company: "MODEC",
+							role: "Offshore Warehouse",
+							period: "Feb 2012 – May 2012",
+							location: "FPSO Cidade de Santos",
+							desc: "I was responsible for inventory control and material requests using AMOS Business Suite 9.",
+						},
+						{
+							company: "McDermott International",
+							role: "Offshore Radio Operator",
+							period: "Aug 2011 – Oct 2012",
+							location: "PLSV Ágil",
+							desc: "I provided operational support to aircraft and offshore administrative coordination.",
+						},
+						{
+							company: "Queiroz Galvão Oil and Gas",
+							role: "Offshore Assistant Storekeeper",
+							period: "Jan 2011 – Mar 2011",
+							location: "Laguna Star Platform",
+							desc: "I participated in the complete inventory of over 8,000 items during the Singapore to Brazil journey.",
+						},
+						{
+							company: "Wellstream",
+							role: "Assistant Storekeeper",
+							period: "Jul 2010",
+							location: "Aker Wayfare Ship (Niterói)",
+							desc: "I was responsible for inventory control and distribution of PPE and operational materials.",
+						},
+						{
+							company: "Brazilian Air Force (FAB)",
+							role: "Soldier",
+							period: "Jan 2004 – Dec 2008",
+							location: "Galeão Military Base",
+							desc: "I served in the Infantry Platoon and provided administrative and technical IT support.",
+						},
+					],
+				},
+			};
 
-        function switchLanguage(lang) {
-            const d = data[lang];
-            document.getElementById('btn-pt').classList.toggle('active-lang', lang === 'pt');
-            document.getElementById('btn-en').classList.toggle('active-lang', lang === 'en');
+			function switchLanguage(lang) {
+				const d = data[lang];
+				document.getElementById("btn-pt").classList.toggle("active-lang", lang === "pt");
+				document.getElementById("btn-en").classList.toggle("active-lang", lang === "en");
 
-            document.getElementById('name').textContent = d.name;
-            document.getElementById('title').textContent = d.title;
-            document.getElementById("summary-title").textContent = d.summaryTitle;
-            document.getElementById("education-title").textContent = d.educationTitle;
-            document.getElementById('summary-text').textContent = d.summary;
-            document.getElementById('edu1').textContent = d.edu1;
-            document.getElementById('edu2').textContent = d.edu2;
-            document.getElementById('skills-title').textContent = d.skillsTitle;
-            document.getElementById('languages-title').textContent = d.languagesTitle;
-            document.getElementById('experience-title').textContent = d.experienceTitle;
+				document.getElementById("name").textContent = d.name;
+				document.getElementById("title").textContent = d.title;
+				document.getElementById("summary-title").textContent = d.summaryTitle;
+				document.getElementById("education-title").textContent = d.educationTitle;
+				document.getElementById("summary-text").textContent = d.summary;
+				document.getElementById("edu1").textContent = d.edu1;
+				document.getElementById("edu2").textContent = d.edu2;
+				document.getElementById("skills-title").textContent = d.skillsTitle;
+				document.getElementById("languages-title").textContent = d.languagesTitle;
+				document.getElementById("experience-title").textContent = d.experienceTitle;
 
-            document.getElementById('skills-container').innerHTML = d.skills.map(s => `<span class="px-5 py-3 bg-zinc-100 dark:bg-zinc-800 rounded-2xl text-sm">${s}</span>`).join('');
-            document.getElementById('languages-container').innerHTML = d.languages.map(l => `<div class="flex justify-between"><span>${l}</span></div>`).join('');
+				document.getElementById("skills-container").innerHTML = d.skills
+					.map((s) => `<span class="px-5 py-3 bg-zinc-100 dark:bg-zinc-800 rounded-2xl text-sm">${s}</span>`)
+					.join("");
+				document.getElementById("languages-container").innerHTML = d.languages
+					.map((l) => `<div class="flex justify-between"><span>${l}</span></div>`)
+					.join("");
 
-            document.getElementById('experience-container').innerHTML = d.experiences.map(exp => `
+				document.getElementById("experience-container").innerHTML = d.experiences
+					.map(
+						(exp) => `
                 <div class="border-l-4 border-[#0a66c2] pl-7">
                     <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-3">
                         <div>
@@ -227,67 +381,53 @@
                     </div>
                     <p class="mt-5 text-zinc-600 dark:text-zinc-400">${exp.desc}</p>
                 </div>
-            `).join('');
-        }
+            `
+					)
+					.join("");
+			}
 
-        function setTheme(theme) {
+			function setTheme(theme) {
+				const html = document.documentElement;
+				const icon = document.getElementById("theme-icon");
 
-            const html = document.documentElement;
-            const icon = document.getElementById("theme-icon");
+				if (theme === "dark") {
+					html.classList.add("dark");
 
-            if (theme === "dark") {
+					icon.classList.remove("fa-moon");
+					icon.classList.add("fa-sun");
+				} else {
+					html.classList.remove("dark");
 
-                html.classList.add("dark");
+					icon.classList.remove("fa-sun");
+					icon.classList.add("fa-moon");
+				}
 
-                icon.classList.remove("fa-moon");
-                icon.classList.add("fa-sun");
+				localStorage.setItem("theme", theme);
+			}
 
-            } else {
+			function toggleDarkMode() {
+				const dark = document.documentElement.classList.contains("dark");
 
-                html.classList.remove("dark");
+				setTheme(dark ? "light" : "dark");
+			}
 
-                icon.classList.remove("fa-sun");
-                icon.classList.add("fa-moon");
+			window.onload = function () {
+				switchLanguage("pt");
 
-            }
+				document.getElementById("footer-year").innerHTML = `© ${new Date().getFullYear()} Marcelo Vianna Pacheco`;
 
-            localStorage.setItem("theme", theme);
+				const savedTheme = localStorage.getItem("theme");
 
-        }
-
-        function toggleDarkMode() {
-
-            const dark = document.documentElement.classList.contains("dark");
-
-            setTheme(dark ? "light" : "dark");
-
-        }
-
-        window.onload = function () {
-
-            switchLanguage("pt");
-
-            document.getElementById("footer-year").innerHTML =
-                `© ${new Date().getFullYear()} Marcelo Vianna Pacheco`;
-
-            const savedTheme = localStorage.getItem("theme");
-
-            if (savedTheme) {
-
-                setTheme(savedTheme);
-
-            } else {
-
-                if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-                    setTheme("dark");
-                } else {
-                    setTheme("light");
-                }
-
-            }
-
-        };
-    </script>
-</body>
-
+				if (savedTheme) {
+					setTheme(savedTheme);
+				} else {
+					if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+						setTheme("dark");
+					} else {
+						setTheme("light");
+					}
+				}
+			};
+		</script>
+	</body>
 </html>
