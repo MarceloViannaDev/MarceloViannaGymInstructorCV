@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap");
+
+.hero-bg {
+    background: linear-gradient(135deg, #0a66c2 0%, #1e88e5 100%);
+}
+
+html {
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+}
+
+.active-lang {
+    background: #0a66c2;
+    color: white;
+}
+
+.dark .active-lang {
+    background: #1e88e5;
+}
+
+#theme-icon {
+    transition: transform 0.3s;
+}
+
+.dark #theme-icon {
+    transform: rotate(180deg);
+}
