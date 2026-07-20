@@ -24,6 +24,13 @@ export const data = {
 		languages: ["Português — Nativo", "English — Fluent"],
 		experienceTitle: "Experiência Profissional",
 		experiences: [
+      {
+				company: "Autonomo",
+				role: "Desenvolvedor de Software Junior",
+				period: "Out 2023 – Fev 2026",
+				location: "Cabo Frio - RJ, Brasil",
+				desc: "Fora do mercado offshore, dediquei-me a desenvolver habilidades em criação de sites. Nesse período, também cofundei uma pequena *startup* com dois amigos, oferecendo nossas competências e serviços a pequenas empresas."
+			},
 			{
 				company: "Prosafe",
 				role: "Instrutor de Educação Física Offshore",
