@@ -354,7 +354,7 @@ h3 { color: var(--heading); font-size: 1.08rem; font-weight: 700; }
   <div id="courses" class="entry-list"></div>
 
   <h2 class="sec-title" id="extraTitle"></h2>
-  <div class="section-body"><p id="extra"></p></div>
+  <div id="extra" class="entry-list"></div>
 
   <h2 class="sec-title" id="langTitle"></h2>
   <div id="languages" class="lang-list"></div>
@@ -484,7 +484,14 @@ role: "Offshore Physical Educator | Lifestyle &amp; Wellness Instructor | Sports
     { name: "NR-37 – Safety and Health on Oil Platforms", sub: "Segurança e Saúde em Plataformas de Petróleo" }
   ],
   extraTitle: "ADDITIONAL INFORMATION",
-  extra: "Up-to-date vaccinations • Immediate availability • Available for travel and boardings (National &amp; International) • Advanced computer skills – Microsoft Office • CREF 000166-C/RJ • CFT 0005731755",
+  extra: [
+    "Up-to-date vaccinations",
+    "Immediate availability",
+    "Available for national and international travel and boardings",
+    "Advanced computer skills – Microsoft Office",
+    "CREF 000166-C/RJ",
+    "CFT 0005731755"
+  ],
   langTitle: "LANGUAGES",
   projectTitle: "PROJECTS", projects: "Online CV: <a href='https://marcelo-vianna-gym-instructor-cv.vercel.app' target='_blank' rel='noopener'>marcelo-vianna-gym-instructor-cv.vercel.app</a>",
   languages: [ { name: "Portuguese", level: "Native" }, { name: "English", level: "Fluent" } ]
@@ -604,7 +611,14 @@ skillsTitle: "COMPETÊNCIAS",
     { name: "NR37", sub: "Segurança e Saúde em Plataformas de Petróleo" }
   ],
   extraTitle: "INFORMAÇÕES ADICIONAIS",
-  extra: "Vacinas atualizadas • Disponibilidade imediata • Disponibilidade para viagens e embarques (Nacional &amp; Internacional) • Conhecimento avançado de informática – Pacote Office • CREF 000166-C/RJ • CFT 0005731755",
+  extra: [
+    "Vacinas atualizadas",
+    "Disponibilidade imediata",
+    "Disponibilidade para viagens e embarques (Nacional &amp; Internacional)",
+    "Conhecimento avançado de informática – Pacote Office",
+    "CREF 000166-C/RJ",
+    "CFT 0005731755"
+  ],
   langTitle: "IDIOMAS",
   projectTitle: "PROJETOS", projects: "Currículo online: <a href='https://marcelo-vianna-gym-instructor-cv.vercel.app' target='_blank' rel='noopener'>marcelo-vianna-gym-instructor-cv.vercel.app</a>",
   languages: [ { name: "Português", level: "Nativo" }, { name: "Inglês", level: "Fluente" } ]
@@ -640,7 +654,9 @@ function setLang(l) {
     `<div class="entry"><i class="fas fa-certificate entry-marker"></i><div><strong>${c.name}</strong><div class="sub">${c.sub}</div></div></div>`
   ).join('');
   document.getElementById('extraTitle').innerHTML = t[l].extraTitle;
-  document.getElementById('extra').innerHTML = t[l].extra;
+  document.getElementById('extra').innerHTML = t[l].extra.map(x =>
+    `<div class="entry"><i class="fas fa-check-circle entry-marker"></i><div><strong>${x}</strong></div></div>`
+  ).join('');
   document.getElementById('projectTitle').innerHTML = t[l].projectTitle;
   document.getElementById('projects').innerHTML = t[l].projects;
   document.getElementById('langTitle').innerHTML = t[l].langTitle;
