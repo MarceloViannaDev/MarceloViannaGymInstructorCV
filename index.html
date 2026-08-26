@@ -3,129 +3,366 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CV de Marcelo Vianna Pacheco — Educador Físico Offshore, Instrutor de Qualidade de Vida, Wellness Offshore e Técnico de Esporte e Lazer. Curriculum Vitae bilíngue (Português/Inglês).">
+<meta name="author" content="Marcelo Vianna Pacheco">
 <title>Marcelo Vianna Pacheco | CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 :root {
-  --bg: #f8fafc;
+  --bg: #eef2f7;
+  --bg-grad-1: #e8eef7;
+  --bg-grad-2: #f5f7fa;
   --card: #ffffff;
-  --heading: #0f172a;
+  --heading: #0b1f3a;
   --text: #334155;
-  --muted: #64748b;
-  --accent: #0284c7;
-  --border: #e2e8f0;
+  --muted: #5b6b7f;
+  --accent: #0a66c2;
+  --accent-dark: #0b2a4f;
+  --border: #dfe6ee;
+  --chip-bg: #f1f4f8;
+  --chip: #e3e9f0;
+  --linkedin: #0a66c2;
+  --linkedin-dark: #084a8f;
+  --whatsapp: #25d366;
+  --whatsapp-dark: #1da851;
+  --shadow: 0 10px 30px rgba(11, 31, 58, 0.07), 0 1px 3px rgba(11, 31, 58, 0.06);
+  --radius: 18px;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, 'Helvetica Neue', sans-serif;
 }
 
 [data-theme="dark"] {
-  --bg: #0f172a;
-  --card: #1e293b;
-  --heading: #f8fafc;
-  --text: #cbd5e1;
-  --muted: #94a3b8;
-  --accent: #38bdf8;
-  --border: #334155;
+  --bg: #0d1526;
+  --bg-grad-1: #0d1526;
+  --bg-grad-2: #0d1526;
+  --card: #16213a;
+  --heading: #f2f6fc;
+  --text: #c7d3e2;
+  --muted: #94a5ba;
+  --accent: #4da3e0;
+  --accent-dark: #1b2a44;
+  --border: #2a3a54;
+  --chip-bg: #1d2b44;
+  --chip: #33445f;
+  --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+html { scroll-behavior: smooth; }
+
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background: var(--bg);
+  font-family: var(--font);
+  background: linear-gradient(160deg, var(--bg-grad-1), var(--bg-grad-2)) fixed;
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   transition: background-color 0.3s, color 0.3s;
 }
 
-.container {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
-}
+/* ===== Layout ===== */
+.container { max-width: 980px; margin: 0 auto; padding: 24px 16px 60px; }
 
 .card {
   background: var(--card);
-  padding: 50px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-  transition: background-color 0.3s;
+  padding: 56px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
-/* Header & Typography */
-h1 { font-size: 2.2rem; color: var(--heading); text-align: center; margin-bottom: 0.2rem; }
-h2 { font-size: 1.25rem; color: var(--heading); border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; margin: 2.5rem 0 1.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
-h3 { font-size: 1.1rem; color: var(--heading); font-weight: 600; }
+/* ===== Top Controls ===== */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 34px;
+  flex-wrap: wrap;
+}
+.controls { display: flex; gap: 8px; flex-wrap: wrap; }
+.toggle {
+  background: var(--chip-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.toggle:hover { border-color: var(--accent); color: var(--accent); }
+.toggle.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.toggle.icon { display: inline-flex; align-items: center; gap: 6px; }
 
-.subtitle { text-align: center; font-size: 1.1rem; color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; }
-.contact { text-align: center; font-size: 0.95rem; color: var(--muted); margin-bottom: 2rem; }
+/* ===== Profile Header ===== */
+.profile {
+  text-align: center;
+  padding-bottom: 34px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 38px;
+}
+.avatar-wrap {
+  width: 138px; height: 138px;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+  padding: 6px;
+  background: linear-gradient(135deg, var(--accent), #4da3e8);
+}
+.avatar-wrap img {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  background: var(--chip-bg);
+}
+h1 {
+  font-size: clamp(1.7rem, 4.5vw, 2.5rem);
+  color: var(--heading);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+}
+.profile .subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: var(--accent);
+  font-weight: 600;
+  margin: 10px auto 14px;
+  max-width: 34ch;
+  line-height: 1.45;
+}
+.contact-line {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 18px;
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.contact-line i { color: var(--accent); margin-right: 6px; }
 
-/* Experience Section */
-.item { margin-bottom: 1.8rem; }
-.job-header { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 0.4rem; }
-.period { font-size: 0.9rem; color: var(--muted); font-weight: 500; white-space: nowrap; }
+/* ===== Action Buttons ===== */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.94rem;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+  border: 1px solid transparent;
+}
+.social-btn:hover { transform: translateY(-2px); }
+.btn-linkedin { background: var(--linkedin); color: #fff; box-shadow: 0 4px 12px rgba(10, 102, 194, 0.28); }
+.btn-linkedin:hover { background: var(--linkedin-dark); }
+.btn-whatsapp { background: var(--whatsapp); color: #fff; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.28); }
+.btn-whatsapp:hover { background: var(--whatsapp-dark); }
+/* ===== Sections ===== */
+.sec-title {
+  font-size: 1.05rem;
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 40px 0 20px;
+  padding-top: 26px;
+  border-top: 1px solid var(--border);
+}
+.sec-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.sec-icon { font-size: 1.15rem; }
 
-p { margin-bottom: 0.8rem; }
-ul { margin-top: 0.5rem; padding-left: 1.5rem; color: var(--text); }
-li { margin-bottom: 0.3rem; }
+h3 { color: var(--heading); font-size: 1.08rem; font-weight: 700; }
 
-/* Utilities */
-.btn-group { display: flex; gap: 10px; justify-content: center; margin-bottom: 2rem; }
-.btn { 
-  background: transparent; 
-  color: var(--text); 
-  border: 1px solid var(--border); 
-  padding: 6px 16px; 
-  border-radius: 20px; 
-  cursor: pointer; 
-  font-size: 0.85rem; 
+.section-body { font-size: 0.98rem; }
+.section-body p { margin-bottom: 6px; }
+
+/* ===== Experience ===== */
+.item {
+  margin-bottom: 28px;
+  padding-left: 20px;
+  border-left: 3px solid var(--border);
+  position: relative;
+}
+.item::before {
+  content: "";
+  position: absolute;
+  left: -6px; top: 6px;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+.period {
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  background: var(--accent-dark);
+  color: #fff;
+  padding: 3px 12px;
+  border-radius: 999px;
+}
+.item p { color: var(--text); margin-top: 4px; }
+
+/* ===== Skills / Chips ===== */
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip {
+  background: var(--chip-bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.86rem;
   font-weight: 500;
   transition: all 0.2s ease;
 }
-.btn:hover { background: var(--border); color: var(--heading); }
+.chip:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
 
-.avatar { width: 130px; height: 130px; border-radius: 50%; overflow: hidden; margin: 0 auto 1.5rem; border: 3px solid var(--border); }
-.avatar img { width: 100%; height: 100%; object-fit: cover; }
+/* ===== Entry lists (education, courses) ===== */
+.entry-list { display: flex; flex-direction: column; gap: 14px; }
+.entry { display: flex; gap: 14px; align-items: flex-start; }
+.entry-marker { color: var(--accent); margin-top: 2px; flex-shrink: 0; font-size: 1rem; }
+.entry strong { color: var(--heading); }
+.entry .sub { color: var(--muted); font-size: 0.9rem; }
 
-/* Responsive */
+/* ===== Languages ===== */
+.lang-list { display: flex; flex-wrap: wrap; gap: 12px; }
+.lang-item {
+  flex: 1 1 200px;
+  background: var(--chip-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.lang-item .name { font-weight: 600; color: var(--heading); }
+.lang-item .level { font-size: 0.8rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+
+/* ===== Project ===== */
+.project-card {
+  background: var(--chip-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+.project-card a { color: var(--accent); font-weight: 600; text-decoration: none; }
+.project-card a:hover { text-decoration: underline; }
+
+/* ===== Footer ===== */
+.footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  padding-top: 30px;
+  margin-top: 10px;
+}
+
+/* ===== Responsive ===== */
 @media (max-width: 640px) {
-  .job-header { flex-direction: column; gap: 0.2rem; }
-  .card { padding: 30px 20px; }
+  .container { padding: 14px 10px 40px; }
+  .card { padding: 28px 18px; border-radius: 14px; }
+  .job-header { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .period { white-space: normal; }
+  .contact-line { gap: 6px 12px; font-size: 0.88rem; }
+  .sec-title { font-size: 0.98rem; }
+  .item { padding-left: 14px; }
+  .actions { gap: 8px; }
+  .social-btn { padding: 10px 16px; font-size: 0.88rem; }
+}
+
+@media (min-width: 641px) and (max-width: 900px) {
+  .container { padding: 20px 18px 50px; }
+  .card { padding: 40px 32px; }
 }
 </style>
 </head>
 <body>
 <div class="container">
 <div class="card">
-  
-  <div class="btn-group">
-    <button class="btn" onclick="setLang('en')">EN</button>
-    <button class="btn" onclick="setLang('pt')">PT-BR</button>
-    <button class="btn" onclick="toggleTheme()">Light / Dark</button>
+
+  <div class="top-bar">
+    <div class="controls">
+      <button class="toggle active" id="btn-pt" onclick="setLang('pt')">🇧🇷 PT-BR</button>
+      <button class="toggle" id="btn-en" onclick="setLang('en')">🇬🇧 EN</button>
+    </div>
+    <button class="toggle icon" id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙 Modo Escuro</button>
   </div>
 
-  <div class="avatar"><img src="Avatar_Circle.png" alt="Marcelo Vianna Pacheco"></div>
-  <h1>MARCELO VIANNA PACHECO</h1>
-  <p class="subtitle" id="role"></p>
-  <p class="contact" id="contact"></p>
+  <div class="profile">
+    <div class="avatar-wrap">
+      <img src="IMG_20200922_162019_750.jpg" alt="Fotografia de Marcelo Vianna Pacheco">
+    </div>
+    <h1>MARCELO VIANNA PACHECO</h1>
+    <p class="subtitle" id="role"></p>
+    <div class="contact-line" id="contact"></div>
+    <div class="actions">
+      <a class="social-btn btn-linkedin" href="https://www.linkedin.com/in/marceloviannaoffshorestorekeeper/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i><span>LinkedIn</span>
+      </a>
+      <a class="social-btn btn-whatsapp" href="https://whatsform.com/OzMUJ5" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i><span>WhatsApp</span>
+      </a>
+    </div>
+  </div>
 
-  <h2 id="summaryTitle"></h2>
-  <p id="summary"></p>
+  <h2 class="sec-title" id="summaryTitle"></h2>
+  <div class="section-body"><p id="summary"></p></div>
 
-  <h2 id="expTitle"></h2>
+  <h2 class="sec-title" id="expTitle"></h2>
   <div id="experience"></div>
 
-  <h2 id="skillsTitle"></h2>
-  <p id="skills"></p>
+  <h2 class="sec-title" id="skillsTitle"></h2>
+  <div id="skills" class="chips"></div>
 
-  <h2 id="eduTitle"></h2>
-  <p id="education"></p>
+  <h2 class="sec-title" id="eduTitle"></h2>
+  <div id="education" class="entry-list"></div>
 
-  <h2 id="coursesTitle"></h2>
-  <p id="courses"></p>
+  <h2 class="sec-title" id="coursesTitle"></h2>
+  <div id="courses" class="entry-list"></div>
 
-  <h2 id="extraTitle"></h2>
-  <p id="extra"></p>
+  <h2 class="sec-title" id="extraTitle"></h2>
+  <div class="section-body"><p id="extra"></p></div>
 
-  <h2 id="projectTitle"></h2><p id="projects"></p><h2 id="langTitle"></h2>
-  <p id="languages"></p>
+  <h2 class="sec-title" id="langTitle"></h2>
+  <div id="languages" class="lang-list"></div>
+
+  <h2 class="sec-title" id="projectTitle"></h2>
+  <div class="project-card"><p id="projects"></p></div>
+
+  <p class="footer" id="footer"></p>
 
 </div>
 </div>
@@ -228,15 +465,29 @@ role: "Offshore Physical Educator | Lifestyle &amp; Wellness Instructor | Sports
     </div>
   `,
   skillsTitle: "SKILLS",
-  skills: "Strength Training, Physical Preparation, Physical Assessment, Physical Conditioning, Quality of Life, Occupational Health, Health Promotion, Ergonomics, Injury Prevention, Personalized Training, Humanized Care, Teamwork, Communication, Planning, Organization, Results Orientation, Workplace Safety, Offshore Warehousing, Inventory Management, Offshore Logistics.",
+  skills: ["Strength Training","Physical Preparation","Physical Assessment","Physical Conditioning","Quality of Life","Occupational Health","Health Promotion","Ergonomics","Injury Prevention","Personalized Training","Humanized Care","Teamwork","Communication","Planning","Organization","Results Orientation","Workplace Safety","Offshore Warehousing","Inventory Management","Offshore Logistics"],
   eduTitle: "EDUCATION",
-  education: "<strong>Specialization in Nutrition</strong> – Estácio de Sá University (ongoing, expected 2028/2029)<br><strong>Degree in Physical Education (Licentiate &amp; Bachelor)</strong> – Estácio de Sá University (2008)<br><strong>Technical Course in Industrial Mechanics</strong> – CETEPS Rio das Ostras (2010)<br><strong>Advanced Hardware &amp; Computers Course</strong> – CEFET/RJ (2004)",
+  education: [
+    { title: "Specialization in Nutrition", sub: "Estácio de Sá University · ongoing, expected 2028/2029" },
+    { title: "Degree in Physical Education (Licentiate &amp; Bachelor)", sub: "Estácio de Sá University · 2008" },
+    { title: "Technical Course in Industrial Mechanics", sub: "CETEPS Rio das Ostras · 2010" },
+    { title: "Advanced Hardware &amp; Computers Course", sub: "CEFET/RJ · 2004" }
+  ],
   coursesTitle: "COURSES / CERTIFICATIONS",
-  courses: "CBSP • HUET • NR 33 – Confined Space • NR 35 – Work at Height • NR 37 – Basic Health &amp; Safety Training on Oil Platforms",
+  courses: [
+    { name: "CBSP – Basic Safety Platform Course", sub: "Curso Básico de Segurança de Plataforma" },
+    { name: "CPSO – Offshore First Aid Course (First Aid)", sub: "Curso de Primeiros Socorros Offshore" },
+    { name: "NR-11 – Transport, Movement, Storage and Handling of Materials", sub: "Transporte, Movimentação, Armazenagem e Manuseio de Materiais" },
+    { name: "NR-33 – Safety and Health in Confined Spaces", sub: "Segurança e Saúde nos Trabalhos em Espaços Confinados" },
+    { name: "NR-34 – Working Conditions and Environment in Shipbuilding, Repair and Dismantling Naval", sub: "Condições e Meio Ambiente de Trabalho na Indústria Naval" },
+    { name: "NR-35 – Work at Height", sub: "Trabalho em Altura" },
+    { name: "NR-37 – Safety and Health on Oil Platforms", sub: "Segurança e Saúde em Plataformas de Petróleo" }
+  ],
   extraTitle: "ADDITIONAL INFORMATION",
   extra: "Up-to-date vaccinations • Immediate availability • Available for travel and boardings (National &amp; International) • Advanced computer skills – Microsoft Office • CREF 000166-C/RJ • CFT 0005731755",
   langTitle: "LANGUAGES",
-  projectTitle: "PROJECTS", projects: "Online CV: https://marcelo-vianna-gym-instructor-cv.vercel.app", languages: "Portuguese (Native) • English (Fluent)"
+  projectTitle: "PROJECTS", projects: "Online CV: <a href='https://marcelo-vianna-gym-instructor-cv.vercel.app' target='_blank' rel='noopener'>marcelo-vianna-gym-instructor-cv.vercel.app</a>",
+  languages: [ { name: "Portuguese", level: "Native" }, { name: "English", level: "Fluent" } ]
 },
 pt: {
   role: "Educador Físico Offshore | Instrutor de Qualidade de Vida | Wellness Offshore | Técnico de Esporte e Lazer",
@@ -334,45 +585,130 @@ pt: {
     </div>
   `,
 skillsTitle: "COMPETÊNCIAS",
-  skills: "Musculação, Preparação Física, Avaliação Física, Condicionamento Físico, Qualidade de Vida, Saúde Ocupacional, Promoção de Saúde, Ergonomia, Prevenção de Lesões, Treinamento Personalizado, Atendimento Humanizado, Trabalho em Equipe, Comunicação, Planejamento, Organização, Foco em Resultados, Segurança no Trabalho, Almoxarifado Offshore, Gestão de Inventário, Logística Offshore.",
+  skills: ["Musculação","Preparação Física","Avaliação Física","Condicionamento Físico","Qualidade de Vida","Saúde Ocupacional","Promoção de Saúde","Ergonomia","Prevenção de Lesões","Treinamento Personalizado","Atendimento Humanizado","Trabalho em Equipe","Comunicação","Planejamento","Organização","Foco em Resultados","Segurança no Trabalho","Almoxarifado Offshore","Gestão de Inventário","Logística Offshore"],
   eduTitle: "EDUCAÇÃO",
-  education: "<strong>Pós-graduação em Nutrição</strong> – Universidade Estácio de Sá (em andamento, previsto para 2028/2029)<br><strong>Licenciatura e Bacharelado em Educação Física</strong> – Universidade Estácio de Sá (concluído em 2008)<br><strong>Curso Técnico em Mecânica Industrial</strong> – Escola Técnica CETEPS Rio das Ostras (concluído em 2010)<br><strong>Curso Avançado de Hardware &amp; Computadores</strong> – CEFET/RJ (concluído em 2004)",
+  education: [
+    { title: "Pós-graduação em Nutrição", sub: "Universidade Estácio de Sá · em andamento, previsto para 2028/2029" },
+    { title: "Licenciatura e Bacharelado em Educação Física", sub: "Universidade Estácio de Sá · concluído em 2008" },
+    { title: "Curso Técnico em Mecânica Industrial", sub: "Escola Técnica CETEPS Rio das Ostras · concluído em 2010" },
+    { title: "Curso Avançado de Hardware &amp; Computadores", sub: "CEFET/RJ · concluído em 2004" }
+  ],
   coursesTitle: "CURSOS / CERTIFICAÇÕES",
-  courses: "CBSP • HUET • NR 33 – Espaço Confinado • NR 35 – Trabalho em Altura • NR 37 – Treinamento Básico de Saúde e Segurança em Plataforma de Petróleo",
+  courses: [
+    { name: "CBSP", sub: "Curso Básico de Segurança de Plataforma" },
+    { name: "CPSO", sub: "Curso de Primeiros Socorros Offshore" },
+    { name: "NR11", sub: "Transporte, Movimentação, Armazenagem e Manuseio de Materiais" },
+    { name: "NR33", sub: "Segurança e Saúde nos Trabalhos em Espaços Confinados" },
+    { name: "NR34", sub: "Condições e Meio Ambiente de Trabalho na Indústria da Construção, Reparação e Desmonte Naval" },
+    { name: "NR35", sub: "Trabalho em Altura" },
+    { name: "NR37", sub: "Segurança e Saúde em Plataformas de Petróleo" }
+  ],
   extraTitle: "INFORMAÇÕES ADICIONAIS",
   extra: "Vacinas atualizadas • Disponibilidade imediata • Disponibilidade para viagens e embarques (Nacional &amp; Internacional) • Conhecimento avançado de informática – Pacote Office • CREF 000166-C/RJ • CFT 0005731755",
   langTitle: "IDIOMAS",
-  projectTitle: "PROJETOS", projects: "Currículo online: https://marcelo-vianna-gym-instructor-cv.vercel.app", languages: "Português (Nativo) • Inglês (Fluente)"
+  projectTitle: "PROJETOS", projects: "Currículo online: <a href='https://marcelo-vianna-gym-instructor-cv.vercel.app' target='_blank' rel='noopener'>marcelo-vianna-gym-instructor-cv.vercel.app</a>",
+  languages: [ { name: "Português", level: "Nativo" }, { name: "Inglês", level: "Fluente" } ]
 }
 };
+const ICONS = { email: "fas fa-envelope", phone: "fas fa-phone", pin: "fas fa-map-marker-alt" };
+
+function renderContact(c) {
+  const parts = c.split(" | ");
+  const icons = [ICONS.email, ICONS.phone, ICONS.pin];
+  return parts.map((p, i) => `<span><i class="${icons[i] || ICONS.pin}"></i>${p}</span>`).join("");
+}
+
 function setLang(l) {
   document.documentElement.lang = l === 'en' ? 'en' : 'pt-BR';
+  document.getElementById('btn-pt').classList.toggle('active', l === 'pt');
+  document.getElementById('btn-en').classList.toggle('active', l === 'en');
+
   document.getElementById('role').innerHTML = t[l].role;
-  document.getElementById('contact').innerHTML = t[l].contact;
+  document.getElementById('contact').innerHTML = renderContact(t[l].contact);
   document.getElementById('summaryTitle').innerHTML = t[l].summaryTitle;
   document.getElementById('summary').innerHTML = t[l].summary;
   document.getElementById('expTitle').innerHTML = t[l].expTitle;
   document.getElementById('experience').innerHTML = t[l].experience;
   document.getElementById('skillsTitle').innerHTML = t[l].skillsTitle;
-  document.getElementById('skills').innerHTML = t[l].skills;
+  document.getElementById('skills').innerHTML = t[l].skills.map(s => `<span class="chip">${s}</span>`).join('');
   document.getElementById('eduTitle').innerHTML = t[l].eduTitle;
-  document.getElementById('education').innerHTML = t[l].education;
+  document.getElementById('education').innerHTML = t[l].education.map(e =>
+    `<div class="entry"><i class="fas fa-graduation-cap entry-marker"></i><div><strong>${e.title}</strong><div class="sub">${e.sub}</div></div></div>`
+  ).join('');
   document.getElementById('coursesTitle').innerHTML = t[l].coursesTitle;
-  document.getElementById('courses').innerHTML = t[l].courses;
+  document.getElementById('courses').innerHTML = t[l].courses.map(c =>
+    `<div class="entry"><i class="fas fa-certificate entry-marker"></i><div><strong>${c.name}</strong><div class="sub">${c.sub}</div></div></div>`
+  ).join('');
   document.getElementById('extraTitle').innerHTML = t[l].extraTitle;
   document.getElementById('extra').innerHTML = t[l].extra;
   document.getElementById('projectTitle').innerHTML = t[l].projectTitle;
   document.getElementById('projects').innerHTML = t[l].projects;
   document.getElementById('langTitle').innerHTML = t[l].langTitle;
-  document.getElementById('languages').innerHTML = t[l].languages;
+  document.getElementById('languages').innerHTML = t[l].languages.map(x =>
+    `<div class="lang-item"><span class="name">${x.name}</span><span class="level">${x.level}</span></div>`
+  ).join('');
+  document.getElementById('footer').innerHTML = '© ' + new Date().getFullYear() + ' Marcelo Vianna Pacheco';
 }
 
 function toggleTheme() {
-  document.documentElement.dataset.theme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+  const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+  document.documentElement.dataset.theme = next;
+  const btn = document.getElementById('theme-toggle');
+  btn.innerHTML = next === 'dark' ? '☀️ Modo Claro' : '🌙 Modo Escuro';
+  try { localStorage.setItem('theme', next); } catch (e) {}
 }
+
+// Restaura o tema salvo
+(function initTheme() {
+  let saved = null;
+  try { saved = localStorage.getItem('theme'); } catch (e) {}
+  const dark = saved === 'dark' || (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+  document.getElementById('theme-toggle').innerHTML = dark ? '☀️ Modo Claro' : '🌙 Modo Escuro';
+})();
 
 // Inicializa no idioma português
 setLang('pt');
 </script>
+
+<!-- ============================================================ -->
+<!-- Conteúdo de texto para sistemas ATS, RH e bots de triagem   -->
+<!-- ============================================================ -->
+<noscript>
+<div style="font-family:sans-serif;max-width:960px;margin:20px auto;padding:20px;line-height:1.6;color:#222;">
+  <h1>MARCELO VIANNA PACHECO</h1>
+  <p>Educador Físico Offshore | Instrutor de Qualidade de Vida | Wellness Offshore | Técnico de Esporte e Lazer</p>
+  <p>marcelovianna2010@gmail.com | +55 (22) 9 9877-5857 | Iguaba Grande / Cabo Frio - RJ, Brasil</p>
+
+  <h2>Resumo</h2>
+  <p>Profissional de Educação Física e Saúde Ocupacional com sólida trajetória em Óleo &amp; Gás, especializado na gestão de academias, ergonomia e prevenção de DORT/LER para tripulações multinacionais. Na Prosafe, liderei programas de condicionamento e bem-estar a bordo do flotel UMS Safe Eurus para mais de 500 tripulantes. Mais de 10 anos de vivência em Logística e Almoxarifado Offshore (FPSO, PLSV e Flotel).</p>
+
+  <h2>Competências</h2>
+  <p>Musculação, Preparação Física, Avaliação Física, Condicionamento Físico, Qualidade de Vida, Saúde Ocupacional, Promoção de Saúde, Ergonomia, Prevenção de Lesões, Treinamento Personalizado, Atendimento Humanizado, Trabalho em Equipe, Comunicação, Planejamento, Organização, Foco em Resultados, Segurança no Trabalho, Almoxarifado Offshore, Gestão de Inventário, Logística Offshore.</p>
+
+  <h2>Cursos / Certificações</h2>
+  <ul>
+    <li>CBSP – Curso Básico de Segurança de Plataforma</li>
+    <li>CPSO – Curso de Primeiros Socorros Offshore</li>
+    <li>NR11 – Transporte, Movimentação, Armazenagem e Manuseio de Materiais</li>
+    <li>NR33 – Segurança e Saúde nos Trabalhos em Espaços Confinados</li>
+    <li>NR34 – Condições e Meio Ambiente de Trabalho na Indústria da Construção, Reparação e Desmonte Naval</li>
+    <li>NR35 – Trabalho em Altura</li>
+    <li>NR37 – Segurança e Saúde em Plataformas de Petróleo</li>
+  </ul>
+
+  <h2>Formação</h2>
+  <p>Pós-graduação em Nutrição (Universidade Estácio de Sá, em andamento, previsto 2028/2029); Licenciatura e Bacharelado em Educação Física (Universidade Estácio de Sá, 2008); Curso Técnico em Mecânica Industrial (CETEPS Rio das Ostras, 2010); Curso Avançado de Hardware &amp; Computadores (CEFET/RJ, 2004).</p>
+
+  <h2>Idiomas</h2>
+  <p>Português (Nativo); Inglês (Fluente)</p>
+
+  <h2>Informações Adicionais</h2>
+  <p>Vacinas atualizadas; Disponibilidade imediata; Disponibilidade para viagens e embarques (Nacional &amp; Internacional); Conhecimento avançado de informática – Pacote Office; CREF 000166-C/RJ; CFT 0005731755.</p>
+
+  <h2>Contato</h2>
+  <p>LinkedIn: https://www.linkedin.com/in/marceloviannaoffshorestorekeeper/ | WhatsApp: https://whatsform.com/OzMUJ5</p>
+</div>
+</noscript>
 </body>
 </html>
